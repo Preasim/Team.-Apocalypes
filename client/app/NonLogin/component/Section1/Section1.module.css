@@ -1,0 +1,36 @@
+.FigureSize {
+  width: 450px;
+}
+
+.SvgFigureSize {
+  width: 400px;
+}
+
+.FirstPartTextLineHeight {
+  line-height: 1.6;
+}
+
+.FirstTextBetweenMargin {
+  margin-left: 7rem;
+}
+
+.FirstImgPosition {
+  top: 20%;
+  left: 15%;
+}
+
+.FirstTextPosition {
+  top: 35%;
+  right: 25%;
+}
+
+.CircleSvgPosition {
+  top: 23%;
+  left: 13%;
+}
+
+.SecondTextBetweenMargin {
+  position: fixed;
+  top: 35%;
+  right: 29%;
+}
