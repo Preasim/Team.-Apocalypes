@@ -191,3 +191,7 @@
 .mainText {
   font-family: "Orbit", sans-serif, serif;
 }
+
+.spaceNoWrap {
+  white-space: nowrap;
+}

@@ -1,0 +1,110 @@
+.CircleTextPosition1 {
+  top: -17rem;
+  left: 5rem;
+  font-size: 1.5rem;
+}
+
+.CircleTextPosition2 {
+  top: 2.6rem;
+  left: 19.8rem;
+  font-size: 1.5rem;
+}
+.CircleTextPosition3 {
+  top: 17rem;
+  left: 2rem;
+  font-size: 1.5rem;
+}
+
+.CircleTextPosition4 {
+  top: 4rem;
+  left: -24rem;
+  font-size: 1.5rem;
+}
+
+.CircleTextPosition5 {
+  top: -11rem;
+  left: -23rem;
+  font-size: 1.5rem;
+}
+
+.svgStart .CircleGraphTextAni {
+  animation: circleGraphText 1s 3s forwards;
+}
+
+.svgStart .CircleGraphTextAniReverse {
+  animation: circleGraphTextReverse 1s 3s forwards;
+}
+
+.svgStart .CircleGraphTextFadeOnAni {
+  animation: circleGraphTextCenterFadeAni 1s 3s forwards;
+}
+
+.svgStart .CircleGraphTextSideFadeOnAni {
+  animation: circleGraphTextSideFadeUpAni 1s 4s forwards;
+}
+
+.svgStart .ReverseAni {
+  animation: chartAni 3s forwards;
+}
+
+@keyframes chartAni {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -1194;
+  }
+}
+
+@keyframes circleGraphText {
+  0% {
+    stroke-dashoffset: 150;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes circleGraphTextReverse {
+  0% {
+    stroke-dashoffset: -150;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes circleGraphTextCenterFadeAni {
+  0% {
+    transform: translateY(20%) translateX(-50%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0%) translateX(-50%);
+    opacity: 1;
+  }
+}
+
+@keyframes circleGraphTextSideFadeUpAni {
+  0% {
+    transform: translateY(20%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes chartFadeOn {
+  0% {
+    stroke-dashoffset: 1194;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}

@@ -23,7 +23,7 @@ const sceneInfo: sceneInfoType = [
   {
     type: "sticky",
     scrollHeight: 0,
-    heightNum: 3,
+    heightNum: 4,
     objs: {},
     values: {
       messageA_opacity_out: [1, 0, { start: 0.1, end: 0.19 }],
@@ -31,14 +31,15 @@ const sceneInfo: sceneInfoType = [
       img1_opacity_out: [1, 0, { start: 0.1, end: 0.19 }],
       img1_transform_out: [0, -20, { start: 0.1, end: 0.19 }],
 
-      img2_opacity_in: [0, 1, { start: 0.21, end: 0.31 }],
-      img2_opacity_out: [1, 0, { start: 0.35, end: 0.45 }],
-      img2_transform_in: [20, 0, { start: 0.21, end: 0.31 }],
-      img2_transform_out: [0, -20, { start: 0.35, end: 0.45 }],
       messageB_opacity_in: [0, 1, { start: 0.21, end: 0.31 }],
       messageB_opacity_out: [1, 0, { start: 0.35, end: 0.45 }],
       messageB_transform_in: [20, 0, { start: 0.21, end: 0.31 }],
       messageB_transform_out: [0, -20, { start: 0.35, end: 0.45 }],
+
+      svgContainer_transform_in: [20, 0, { start: 0.5, end: 0.6 }],
+      svgContainer_transform_out: [0, -20, { start: 0.65, end: 0.75 }],
+      svgContainer_opacity_in: [0, 1, { start: 0.5, end: 0.6 }],
+      svgContainer_opacity_out: [1, 0, { start: 0.65, end: 0.75 }],
     },
   },
   {
@@ -65,10 +66,7 @@ function setSceneObj() {
   //첫번째 섹션 처음 이미지 및 텍스트
   sceneInfo[0].objs.messageA = document.querySelector("#messageA");
   sceneInfo[0].objs.img1 = document.querySelector("#TetoImg1");
-
-  // 첫번째 섹션  circle svg 및 텍스트
-  sceneInfo[0].objs.messageB = document.querySelector("#messageB");
-  sceneInfo[0].objs.img2 = document.querySelector("#TetoImg2");
+  sceneInfo[0].objs.svgContainer = document.querySelector(".svgContainer");
 }
 
 // dom 로딩이후 sceneInfo의 dom을 연결해주는 함수
@@ -149,12 +147,12 @@ function playAnimation() {
   if (currentYoffset < 0) return;
   switch (currentScene) {
     case 0:
-      console.log(scrollRatio);
       if (
         objs.messageA === null ||
         objs.img1 === null ||
         objs.img2 === null ||
-        objs.messageB === null
+        objs.messageB === null ||
+        objs.svgContainer === null
       )
         return;
       if (scrollRatio <= 0.2) {
@@ -172,62 +170,47 @@ function playAnimation() {
         objs.img1.style.transform = `translateY(${calcValues(
           values.img1_transform_out,
           currentYoffset,
-        )}px)`;
+        )}px) `;
 
         objs.messageA.style.transform = `translateY(${calcValues(
           values.messageA_transform_out,
           currentYoffset,
-        )}px)`;
+        )}px) `;
       }
 
-      if (scrollRatio <= 0.35) {
-        // SVG circle 애니메이션
-        objs.img2.style.opacity = calcValues(
-          values.img2_opacity_in,
-          currentYoffset,
-        );
-        objs.messageB.style.opacity = calcValues(
-          values.messageB_opacity_in,
-          currentYoffset,
-        );
-        objs.img2.style.transform = `translateY(${calcValues(
-          values.img2_transform_in,
+      if (scrollRatio <= 0.6) {
+        objs.svgContainer.style.transform = `translateY(${calcValues(
+          values.svgContainer_transform_in,
           currentYoffset,
         )}px)`;
 
-        objs.messageB.style.transform = `translateY(${calcValues(
-          values.messageB_transform_in,
+        objs.svgContainer.style.opacity = `${calcValues(
+          values.svgContainer_opacity_in,
           currentYoffset,
-        )}px)`;
+        )}`;
       } else {
-        objs.img2.style.opacity = calcValues(
-          values.img2_opacity_out,
-          currentYoffset,
-        );
-        objs.messageB.style.opacity = calcValues(
-          values.messageB_opacity_out,
-          currentYoffset,
-        );
-        objs.img2.style.transform = `translateY(${calcValues(
-          values.img2_transform_out,
+        objs.svgContainer.classList.add("svgStart");
+        objs.svgContainer.style.transform = `translateY(${calcValues(
+          values.svgContainer_transform_out,
           currentYoffset,
         )}px)`;
 
-        objs.messageB.style.transform = `translateY(${calcValues(
-          values.messageB_transform_out,
+        objs.svgContainer.style.opacity = `${calcValues(
+          values.svgContainer_opacity_out,
           currentYoffset,
-        )}px)`;
+        )}`;
       }
+      console.log(scrollRatio);
 
       break;
     case 1:
       if (objs.messageA === null) return;
-      if (scrollRatio <= 0.22) {
-        objs.messageA.style.opacity = calcValues(
-          values.messageB_opacity_in,
-          currentYoffset,
-        );
-      }
+      // if (scrollRatio <= 0.22) {
+      //   objs.messageA.style.opacity = calcValues(
+      //     values.messageB_opacity_in,
+      //     currentYoffset,
+      //   );
+      // }
       break;
     case 2:
       // if (scrollRatio <= 0.22) {
