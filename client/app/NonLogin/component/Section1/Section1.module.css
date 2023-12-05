@@ -1,0 +1,65 @@
+.FigureSize {
+  width: 450px;
+}
+
+.FirstPartTextLineHeight {
+  line-height: 1.6;
+}
+
+.FirstTextBetweenMargin {
+  margin-left: 7rem;
+}
+
+.FirstImgPosition {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.FirstTextPosition {
+  top: 35%;
+  right: 5%;
+}
+
+.SecondTextfixed {
+  position: fixed;
+  top: 35%;
+  right: 25%;
+}
+
+.SvgPosition {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.CircleSvgPosition {
+  top: -50%;
+  left: -50%;
+}
+
+.CircleSvgTextPosition {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.CircleSvgTextStyle {
+  font-weight: bold;
+  font-size: 1.4rem;
+  white-space: nowrap;
+}
+
+.RotateCircle {
+  transform: translate(-50%, -50%) rotate(-130deg);
+}
+
+.CircleOrigin {
+  transform-origin: center;
+}
+
+.graphTextStyle {
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+}

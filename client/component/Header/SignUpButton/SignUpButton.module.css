@@ -1,0 +1,18 @@
+.signUpBoxStyle {
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  color: var(--white);
+}
+
+.signUpStyle {
+  padding: 0 0.7rem;
+  background-color: var(--purple06);
+  cursor: pointer;
+  color: inherit;
+}
+
+.arrowStyle {
+  background-color: var(--purple04);
+  padding: 0.7rem 0.4rem;
+}

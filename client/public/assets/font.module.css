@@ -1,0 +1,102 @@
+@font-face {
+  font-family: "NotoSans";
+  font-weight: 100;
+  font-style: normal;
+  src:
+    local(NotoSansKR Black),
+    url("../font/krTItleFont/NotoSansKR-Thin.ttf") format("ttf"),
+    url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100&display=swap")
+      format("ttf");
+}
+@font-face {
+  font-family: "NotoSans";
+  font-weight: 200;
+  font-style: normal;
+  src:
+    local(NotoSansKR Black),
+    url("../font/krTItleFont/NotoSansKR-ExtraLight.ttf") format("ttf"),
+    url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@200&display=swap")
+      format("ttf");
+}
+@font-face {
+  font-family: "NotoSans";
+  font-weight: 300;
+  font-style: normal;
+  src:
+    local(NotoSansKR Black),
+    url("../font/krTItleFont/NotoSansKR-Light.ttf") format("ttf"),
+    url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@300&display=swap")
+      format("ttf");
+}
+@font-face {
+  font-family: "NotoSans";
+  font-weight: 400;
+  font-style: normal;
+  src:
+    local(NotoSansKR Black),
+    url("../font/krTItleFont/NotoSansKR-Regular.ttf") format("ttf"),
+    url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@400&display=swap")
+      format("ttf");
+}
+@font-face {
+  font-family: "NotoSans";
+  font-weight: 500;
+  font-style: normal;
+  src:
+    local(NotoSansKR Black),
+    url("../font/krTItleFont/NotoSansKR-Medium.ttf") format("ttf"),
+    url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@500&display=swap")
+      format("ttf");
+}
+@font-face {
+  font-family: "NotoSans";
+  font-weight: 600;
+  font-style: normal;
+  src:
+    local(NotoSansKR Black),
+    url("../font/krTItleFont/NotoSansKR-SemiBold.ttf") format("ttf"),
+    url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@600&display=swap")
+      format("ttf");
+}
+@font-face {
+  font-family: "NotoSans";
+  font-weight: 700;
+  font-style: normal;
+  src:
+    local(NotoSansKR Black),
+    url("../font/krTItleFont/NotoSansKR-Bold.ttf") format("ttf"),
+    url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@700&display=swap")
+      format("ttf");
+}
+@font-face {
+  font-family: "NotoSans";
+  font-weight: 800;
+  font-style: normal;
+  src:
+    local(NotoSansKR Black),
+    url("../font/krTItleFont/NotoSansKR-ExtraBold.ttf") format("ttf"),
+    url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@800&display=swap")
+      format("ttf");
+}
+@font-face {
+  font-family: "NotoSans";
+  font-weight: 900;
+  font-style: normal;
+  src:
+    local(NotoSansKR Black),
+    url("../font/krTItleFont/NotoSansKR-Black.ttf") format("ttf"),
+    url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@900&display=swap")
+      format("ttf");
+}
+
+@font-face {
+  font-family: "Orbit";
+  font-weight: 400;
+  font-style: normal;
+  src:
+    local("Orbit"),
+    url("../font/bodyFont/Orbit-Regular.woff2") format("woff2"),
+    url("../font/bodyFont/Orbit-Regular.ttf") format("ttf"),
+    url("https://fonts.googleapis.com/css2?family=Orbit&display=swap")
+      format("ttf");
+}
