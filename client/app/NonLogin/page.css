@@ -1,0 +1,15 @@
+#show-scene-0 .activeSceneBlock0 {
+  display: block;
+}
+
+#show-scene-0 .activeSceneFlex0 {
+  display: flex;
+}
+
+#show-scene-1 .activeSceneBlock1 {
+  display: block;
+}
+
+#show-scene-1 .activeSceneFlex1 {
+  display: flex;
+}

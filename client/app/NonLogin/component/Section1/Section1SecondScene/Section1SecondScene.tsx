@@ -14,7 +14,9 @@ export default function Section1SecondScene() {
     init();
   }, []);
   return (
-    <div className={`flex alignCenter justifyCenter widthFull`}>
+    <div
+      className={` alignCenter justifyCenter widthFull displayNone activeSceneFlex0`}
+    >
       <div className={`${style.SvgPosition} svgContainer`}>
         <svg
           viewBox="0 0 800 800"
@@ -151,7 +153,7 @@ export default function Section1SecondScene() {
         </p>
       </div>
       <div
-        className={`flex flexCol firstPartText  ${style.SecondTextfixed} opacityNone`}
+        className={`flex flexCol firstPartText  ${style.SecondTextfixed} `}
         id="messageB"
       >
         <p className="fontSize2 fontWeight900 mb2 krTitle">완벽한 루틴 실천</p>

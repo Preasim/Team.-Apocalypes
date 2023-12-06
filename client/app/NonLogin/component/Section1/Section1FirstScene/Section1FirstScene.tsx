@@ -6,7 +6,7 @@ import SignUpButton from "@/component/Header/SignUpButton/SignUpButton";
 export default function Section1FirstScene() {
   return (
     <div
-      className={`flex alignCenter justifyCenter fixed ${style.FirstImgPosition}`}
+      className={`widthFull fixed alignCenter justifyCenter ${style.FirstImgPosition} displayNone activeSceneFlex0`}
     >
       <figure className={` ${style.FigureSize}`} id="TetoImg1">
         <img src="/TeToImg/tetoLogo4.png" alt="TeTo 이미지1" />

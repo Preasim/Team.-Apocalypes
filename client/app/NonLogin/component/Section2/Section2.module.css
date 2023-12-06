@@ -1,0 +1,24 @@
+.FirstScenePosition {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.FirstSceneFigurePosition {
+  left: calc(27% - 150px);
+  top: -250px;
+}
+
+.FirstSceneTextPosition {
+  right: 18%;
+  top: -4rem;
+}
+
+.FirstSceneTextWidth {
+  width: 500px;
+}
+
+.FirstSceneTextLineHeight {
+  line-height: 1.6;
+}

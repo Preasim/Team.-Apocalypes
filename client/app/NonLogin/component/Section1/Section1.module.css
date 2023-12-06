@@ -25,6 +25,7 @@
   position: fixed;
   top: 35%;
   right: 25%;
+  transform: translateY(88%);
 }
 
 .SvgPosition {
