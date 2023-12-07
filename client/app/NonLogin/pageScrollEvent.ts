@@ -1,8 +1,12 @@
+import { Dispatch, SetStateAction } from "react";
+import { init as TypingInit } from "./component/Section2/TypingAnimation";
 let yoffset = 0; //현재 스크롤된 높이
 let prevScrollHeight = 0; // 이전 씬의 총 높이
 let currentScene = 0; //현재 활성화된 씬
 let current = 0;
 let acc = 0.1;
+let TypingOn = false;
+let setTypingStateFn: Dispatch<SetStateAction<boolean>> | null = null;
 
 type yoffsetType = number;
 
@@ -47,7 +51,7 @@ const sceneInfo: sceneInfoType = [
   {
     type: "sticky",
     scrollHeight: 0,
-    heightNum: 8,
+    heightNum: 6,
     objs: {},
     values: {
       img1_opacity_in: [0, 1, { start: 0.05, end: 0.15 }],
@@ -64,15 +68,11 @@ const sceneInfo: sceneInfoType = [
       messageB_opacity_out: [1, 0, { start: 0.4, end: 0.5 }],
       messageB_transform_in: [20, 0, { start: 0.3, end: 0.4 }],
       messageB_transform_out: [0, -20, { start: 0.4, end: 0.5 }],
-    },
-  },
-  {
-    type: "sticky",
-    scrollHeight: 0,
-    heightNum: 3,
-    objs: {},
-    values: {
-      messageC_opacity_in: [0, 1, { start: 0.1, end: 0.2 }],
+
+      TypingContainer_transform_in: [20, 0, { start: 0.6, end: 0.7 }],
+      TypingContainer_opacity_in: [0, 1, { start: 0.6, end: 0.7 }],
+      cursor_transform_in: [20, 0, { start: 0.6, end: 0.7 }],
+      cursor_opacity_in: [0, 1, { start: 0.6, end: 0.7 }],
     },
   },
 ];
@@ -86,6 +86,9 @@ function setSceneObj() {
   sceneInfo[1].objs.img1 = document.querySelector("#UsingTeToImg");
   sceneInfo[1].objs.messageA = document.querySelector("#messageC");
   sceneInfo[1].objs.messageB = document.querySelector("#messageD");
+  sceneInfo[1].objs.TypingContainer =
+    document.querySelector("#typingContainer");
+  sceneInfo[1].objs.cursor = document.querySelector(".cursor");
 }
 
 // dom 로딩이후 sceneInfo의 dom을 연결해주는 함수
@@ -252,7 +255,9 @@ function playAnimation() {
       if (
         objs.messageA === null ||
         objs.img1 === null ||
-        objs.messageB === null
+        objs.messageB === null ||
+        objs.TypingContainer === null ||
+        objs.cursor === null
       )
         return;
       if (scrollRatio <= 0.2) {
@@ -319,14 +324,35 @@ function playAnimation() {
         )}`;
       }
 
-      break;
-    case 2:
-      // if (scrollRatio <= 0.22) {
-      //   objs.messageA.style.opacity = calcValues(
-      //     values.messageA_opacity_in,
-      //     currentYoffset
-      //   );
-      // }
+      if (scrollRatio <= 0.7) {
+        objs.TypingContainer.style.transform = `translateY(${calcValues(
+          values.TypingContainer_transform_in,
+          currentYoffset,
+        )}px)`;
+
+        objs.TypingContainer.style.opacity = `${calcValues(
+          values.TypingContainer_opacity_in,
+          currentYoffset,
+        )}`;
+
+        objs.cursor.style.transform = `translateY(${calcValues(
+          values.cursor_transform_in,
+          currentYoffset,
+        )}px)`;
+
+        objs.cursor.style.opacity = `${calcValues(
+          values.cursor_opacity_in,
+          currentYoffset,
+        )}`;
+      } else {
+        if (!TypingOn) {
+          TypingOn = true;
+          if (setTypingStateFn) {
+            setTypingStateFn(true);
+          }
+        }
+      }
+
       break;
   }
 }
@@ -362,7 +388,8 @@ if (typeof window !== "undefined") {
   });
 }
 
-export function init() {
+export function init(setTypingState: Dispatch<SetStateAction<boolean>>) {
+  setTypingStateFn = setTypingState;
   yoffset = window.scrollY;
   current = current + (yoffset - current) * acc;
   setSceneInfo();

@@ -22,3 +22,35 @@
 .FirstSceneTextLineHeight {
   line-height: 1.6;
 }
+
+.lastSceneTextPosition {
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.lastSceneTextCenter {
+  text-align: center;
+}
+
+.lastSceneSize {
+  width: 800px;
+}
+
+.latSceneCursorStyle {
+  font-size: 2.5rem;
+}
+
+.latSceneCursorAni {
+  animation: cursorTwinkling 0.5s infinite alternate-reverse;
+}
+
+@keyframes cursorTwinkling {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

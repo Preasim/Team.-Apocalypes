@@ -1,0 +1,17 @@
+.TypingActive {
+  display: block;
+}
+
+.latSceneCursorAni {
+  animation: cursorTwinkling 0.5s infinite alternate-reverse;
+}
+
+@keyframes cursorTwinkling {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

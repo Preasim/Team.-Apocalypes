@@ -1,5 +1,19 @@
+"use client";
+import { Dispatch, SetStateAction, useEffect } from "react";
 import style from "./Section2.module.css";
-export default function Section2() {
+import { init } from "./TypingAnimation";
+
+type propsType = {
+  TypingState: boolean;
+  setTypingState: Dispatch<SetStateAction<boolean>>;
+};
+
+export default function Section2(props: propsType) {
+  useEffect(() => {
+    if (props.TypingState) {
+      init();
+    }
+  }, [props.TypingState]);
   return (
     <section id="scroll-section-1">
       <div
@@ -45,8 +59,15 @@ export default function Section2() {
           </div>
         </div>
       </div>
-      <div>
-        <p>더 나은 일상을 위한 첫 걸음입니다 성공을 향해 나아가세요</p>
+      <div
+        className={`activeSceneBlock1 fixed ${style.lastSceneTextPosition} fontSize2 ${style.FirstSceneTextLineHeight} krTitle fontWeight900 ${style.lastSceneTextCenter} ${style.lastSceneSize}`}
+      >
+        <p className="opacityNone" id="typingContainer">
+          <span className="typing "></span>
+          <span className={`cursor ${style.latSceneCursorStyle}  opacityNone`}>
+            |
+          </span>
+        </p>
       </div>
       <div></div>
     </section>
