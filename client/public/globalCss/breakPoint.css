@@ -77,7 +77,7 @@
   }
 
   body .FirstSceneDesc {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   body .SecondSceneRightTitleText {
@@ -90,6 +90,13 @@
 
   body .SecondPartText {
     right: 25%;
+  }
+
+  body .ThirdSceneSecondTitleText {
+    font-size: 1.8rem;
+  }
+  body .ThirdSceneSecondDescText {
+    font-size: 0.9rem;
   }
 }
 
@@ -173,5 +180,227 @@
   body .CircleTextPosition5 {
     top: -6.5rem;
     left: -14rem;
+  }
+
+  body .SecondSceneRightTitleText {
+    font-size: 1.6rem;
+  }
+
+  body .SecondSceneRightDescText {
+    font-size: 0.8rem;
+  }
+
+  body .ThirdSceneFigureContainer {
+    top: -230px;
+  }
+
+  body .ThirdSceneFigureContainer {
+    left: calc(21% - 150px);
+  }
+
+  body .ThirdSceneGifText {
+    right: -11%;
+  }
+
+  body .ThirdSceneText {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body .FirstSceneTitle {
+    font-size: 1.4rem;
+  }
+
+  body .FirstSceneDesc {
+    font-size: 0.8rem;
+  }
+
+  body .LoginTextSize {
+    font-size: 0.8rem;
+  }
+
+  body .SignUpButton {
+    padding: 0 0.6rem;
+  }
+
+  body .SignUpArrow {
+    padding: 0.6rem 0.4rem;
+  }
+
+  body .SecondPartText {
+    top: 40%;
+  }
+
+  body .SecondSceneContainer {
+    width: 50%;
+    height: 50%;
+  }
+
+  body .SecondSceneSvgText {
+    font-size: 0.9rem;
+  }
+
+  body .SecondSceneRightTitleText {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  body .SecondSceneRightDescText {
+    font-size: 0.6rem;
+  }
+
+  body .CircleTextPosition1 {
+    top: -8.2rem;
+    left: 2.5rem;
+    font-size: 0.8rem;
+  }
+
+  body .CircleTextPosition2 {
+    top: 1.2rem;
+    left: 9.5rem;
+    font-size: 0.8rem;
+  }
+
+  body .CircleTextPosition3 {
+    top: 8rem;
+    left: 1rem;
+    font-size: 0.8rem;
+  }
+
+  body .CircleTextPosition4 {
+    top: 1.7rem;
+    left: -11.5rem;
+    font-size: 0.8rem;
+  }
+
+  body .CircleTextPosition5 {
+    top: -5.1rem;
+    left: -10.9rem;
+    font-size: 0.8rem;
+  }
+
+  body .ThirdSceneFirstTitleText {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  body .ThirdSceneSecondDescText {
+    font-size: 0.8rem;
+  }
+
+  body .ThirdSceneFigureContainer {
+    left: calc(26% - 150px);
+  }
+
+  body .ThirdSceneFigureContainer {
+    width: 300px;
+    height: 300px;
+    top: -170px;
+  }
+
+  body .ThirdSceneText {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  body .FirstSceneTitle {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+  body .FirstSceneDesc {
+    font-size: 0.6rem;
+  }
+
+  body .LoginTextSize {
+    font-size: 0.6rem;
+  }
+
+  body .LoginTextSize {
+    font-size: 0.6rem;
+  }
+
+  body .SignUpButton {
+    font-size: 0.6rem;
+  }
+
+  body .SignUpArrow {
+    padding: 0.4rem;
+    font-size: 0.8rem;
+  }
+
+  body .SecondSceneContainer {
+    width: 40%;
+    height: 40%;
+  }
+
+  body .SecondSceneSvgText {
+    font-size: 0.7rem;
+  }
+
+  body .CircleTextPosition1 {
+    top: -5.5rem;
+    left: 1.7rem;
+    font-size: 0.6rem;
+  }
+
+  body .CircleTextPosition2 {
+    top: 0.6rem;
+    left: 6.5rem;
+    font-size: 0.6rem;
+  }
+
+  body .CircleTextPosition3 {
+    top: 5.5rem;
+    left: 0.5rem;
+    font-size: 0.6rem;
+  }
+
+  body .CircleTextPosition4 {
+    top: 1rem;
+    left: -8.2rem;
+    font-size: 0.6rem;
+  }
+
+  body .CircleTextPosition5 {
+    top: -3.5rem;
+    left: -7.5rem;
+    font-size: 0.6rem;
+  }
+
+  body .SecondSceneSvgText {
+    font-size: 0.7rem;
+  }
+
+  body .SecondPartText {
+    right: 29%;
+  }
+
+  body .ThirdSceneGifText {
+    right: -27%;
+  }
+
+  body .ThirdSceneFirstTitleText {
+    font-size: 1.1rem;
+  }
+
+  body .ThirdSceneSecondDescText {
+    font-size: 0.6rem;
+  }
+
+  body .ThirdSceneGifText {
+    right: -31%;
+    top: -5rem;
+  }
+
+  body .ThirdSceneFigureContainer {
+    width: 260px;
+    left: calc(27% - 150px);
+  }
+
+  body .TypingAni {
+    font-size: 2rem;
   }
 }

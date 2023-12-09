@@ -132,6 +132,16 @@ function setLayout() {
   }
 }
 
+function Responsive() {
+  if (window.innerWidth <= 640) {
+    sceneInfo[0].values.svgContainer_left_moveLeft = [
+      50,
+      24,
+      { start: 0.45, end: 0.55 },
+    ];
+  }
+}
+
 function calcValues(values: any, currentYoffset: yoffsetType) {
   let rv;
   const scrollHeight = sceneInfo[currentScene].scrollHeight;
@@ -392,6 +402,7 @@ export function init(setTypingState: Dispatch<SetStateAction<boolean>>) {
   yoffset = window.scrollY;
   current = current + (yoffset - current) * acc;
   setSceneInfo();
+  Responsive();
   setLayout();
   scrollLoop();
   playAnimation();
