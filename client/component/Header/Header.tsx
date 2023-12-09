@@ -1,5 +1,5 @@
 import style from "./Header.module.css";
-import SignUpButton from "./SignUpButton/SignUpButton";
+import SignUpButton from "../SignUpButton/SignUpButton";
 import LoginButton from "../LoginButton/LoginButton";
 import Logo from "@/app/NonLogin/component/Logo/Logo";
 

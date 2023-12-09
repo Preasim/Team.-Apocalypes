@@ -23,6 +23,29 @@
   line-height: 1.6;
 }
 
+.FirstSceneTitleTextFontSize {
+  font-size: 2.5rem;
+}
+
+.FirstSceneDescTextFontSize {
+  font-size: 1.3rem;
+}
+
+.ThirdSceneFigureContainer {
+  width: 500px;
+  height: 500px;
+}
+
+.ThirdSceneFigure {
+  width: 100%;
+  height: 100%;
+}
+
+.ThirdSceneSize {
+  width: 500px;
+  height: 500px;
+}
+
 .lastSceneTextPosition {
   top: 50%;
   left: 50%;
@@ -31,10 +54,6 @@
 
 .lastSceneTextCenter {
   text-align: center;
-}
-
-.lastSceneSize {
-  width: 800px;
 }
 
 .latSceneCursorStyle {

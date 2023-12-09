@@ -15,14 +15,17 @@ export default function Section1SecondScene() {
   }, []);
   return (
     <div
-      className={` alignCenter justifyCenter widthFull displayNone activeSceneFlex0`}
+      className={`alignCenter justifyCenter displayNone activeSceneFlex0 ${style.SecondSceneContainer}`}
     >
-      <div className={`${style.SvgPosition} svgContainer`}>
+      <div
+        className={`${style.SvgPosition} svgContainer ${style.SvgContainer} SecondSceneContainer`}
+      >
         <svg
           viewBox="0 0 800 800"
-          width={800}
-          height={800}
-          className={`${style.RotateCircle} absolute ${style.CircleSvgPosition}`}
+          width="100%"
+          height="100%"
+          xmlns="http://www.w3.org/2000/svg"
+          className={`${style.RotateCircle} relative ${style.CircleSvgPosition} SecondSceneSvg`}
         >
           <circle
             cx={circleCx}
@@ -141,24 +144,28 @@ export default function Section1SecondScene() {
             key={index}
             className={`absolute CircleTextPosition${
               index + 1
-            } spaceNoWrap fontSize1 krTitle CircleGraphTextSideFadeOnAni opacityNone`}
+            } spaceNoWrap fontSize1 krTitle CircleGraphTextSideFadeOnAni opacityNone `}
           >
             {item}
           </span>
         ))}
         <p
-          className={`absolute spaceNoWrap ${style.graphTextStyle} fontWeight700 krTitle CircleGraphTextFadeOnAni opacityNone`}
+          className={`absolute spaceNoWrap ${style.graphTextStyle} fontWeight700 krTitle CircleGraphTextFadeOnAni opacityNone ${style.CircleSvgTextPosition} SecondSceneSvgText`}
         >
           하루를 계획하세요
         </p>
       </div>
       <div
-        className={`flex flexCol firstPartText  ${style.SecondTextfixed} `}
+        className={`flex flexCol SecondPartText  ${style.SecondTextfixed} `}
         id="messageB"
       >
-        <p className="fontSize2 fontWeight900 mb2 krTitle">완벽한 루틴 실천</p>
         <p
-          className={`${style.FirstPartTextLineHeight} fontWeight600 mainText`}
+          className={`fontSize2 fontWeight900 mb2 krTitle ${style.SvgRightTitleSize} SecondSceneRightTitleText`}
+        >
+          완벽한 루틴 실천
+        </p>
+        <p
+          className={`${style.SecondPartTextLineHeight} fontWeight600 mainText ${style.SvgRightDescSize} SecondSceneRightDescText`}
         >
           시간 및 날짜를 지정하여 업무를 신속히 추가할 수 있습니다.
           <br />

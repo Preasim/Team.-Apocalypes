@@ -1,5 +1,4 @@
 import { Dispatch, SetStateAction } from "react";
-import { init as TypingInit } from "./component/Section2/TypingAnimation";
 let yoffset = 0; //현재 스크롤된 높이
 let prevScrollHeight = 0; // 이전 씬의 총 높이
 let currentScene = 0; //현재 활성화된 씬
@@ -39,11 +38,11 @@ const sceneInfo: sceneInfoType = [
       messageB_opacity_out: [1, 0, { start: 0.65, end: 0.75 }],
       messageB_transform_in: [20, 0, { start: 0.21, end: 0.31 }],
       messageB_transform_out: [0, -20, { start: 0.65, end: 0.75 }],
-      messageB_transformRight: [0, 50, { start: 0.45, end: 0.55 }],
+      messageB_transformRight: [0, 60, { start: 0.45, end: 0.55 }],
 
       svgContainer_transform_in: [20, 0, { start: 0.3, end: 0.4 }],
       svgContainer_transform_out: [0, -20, { start: 0.65, end: 0.85 }],
-      svgContainer_left_moveLeft: [50, 32, { start: 0.45, end: 0.55 }],
+      svgContainer_left_moveLeft: [50, 28, { start: 0.45, end: 0.55 }],
       svgContainer_opacity_in: [0, 1, { start: 0.3, end: 0.4 }],
       svgContainer_opacity_out: [1, 0, { start: 0.65, end: 0.85 }],
     },
@@ -223,7 +222,7 @@ function playAnimation() {
         objs.messageB.style.transform = `translateX(${calcValues(
           values.messageB_transformRight,
           currentYoffset,
-        )}%) translateY(88%)`;
+        )}%) translateY(80%)`;
 
         objs.messageB.style.opacity = `${calcValues(
           values.messageB_opacity_in,
@@ -240,8 +239,8 @@ function playAnimation() {
           currentYoffset,
         )}`;
 
-        objs.messageB.style.transform = `translateX(50%) translateY(${
-          88 + calcValues(values.messageB_transform_out, currentYoffset)
+        objs.messageB.style.transform = `translateX(60%) translateY(${
+          80 + calcValues(values.messageB_transform_out, currentYoffset)
         }%)`;
 
         objs.messageB.style.opacity = `${calcValues(

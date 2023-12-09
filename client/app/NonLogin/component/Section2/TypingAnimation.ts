@@ -11,7 +11,7 @@ async function removeTypingAni() {
   if (lastScene !== null) {
     const currentContent = content[currentPrintWord];
     for (let index = i - 1; index >= 0; index--) {
-      await new Promise((resolve) => setTimeout(resolve, 100));
+      await new Promise((resolve) => setTimeout(resolve, 70));
       let txt = currentContent.slice(0, index);
       lastScene.innerText = txt;
       if (index <= 0) {
@@ -23,7 +23,7 @@ async function removeTypingAni() {
         setTimeout(() => {
           i = 0;
           interver();
-        }, 1000);
+        }, 80);
       }
     }
   }
@@ -47,7 +47,7 @@ function interver() {
   if (lastScene !== null) {
     const interverTime = setInterval(() => {
       typingAni(interverTime);
-    }, 200);
+    }, 80);
   }
 }
 
