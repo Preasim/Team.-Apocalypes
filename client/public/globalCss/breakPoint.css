@@ -615,10 +615,7 @@
   }
 }
 
-@media screen and (max-width: 380px) {
-  body .FirstSceneTitle {
-    font-size: 0.6rem;
-  }
+@media screen and (max-width: 400px) {
   body .FirstSceneTitle {
     margin-bottom: 0.55rem;
   }
@@ -639,6 +636,12 @@
     font-size: 0.3rem;
   }
 
+  body .TypingAni {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 380px) {
   body .SecondSceneSvgText {
     font-size: 0.4rem;
   }
@@ -724,9 +727,5 @@
 
   body .ThirdSceneSecondDescText {
     font-size: 0.55rem;
-  }
-
-  body .TypingAni {
-    font-size: 1.3rem;
   }
 }
