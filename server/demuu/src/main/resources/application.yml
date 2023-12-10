@@ -1,7 +1,13 @@
-spring.mail.host=smtp.gmail.com
-spring.mail.port=465
-spring.mail.username=preasim.kr@gmail.com
-spring.mail.password=czod fdjc hncq xskg
-spring.mail.properties.mail.smtp.auth=true
-spring.mail.properties.mail.smtp.timeout=5000
-spring.mail.properties.mail.smtp.starttls.enable=true
+#spring:
+#  mail:
+#    host: smtp.gmail.com
+#    port: 465
+#    username: preasim.kr@gmail.com
+#    password:
+#    properties:
+#      mail:
+#        smtp:
+#          auth: true
+#          timeout: 5000
+#          starttls:
+#            enable: true
