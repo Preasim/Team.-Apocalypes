@@ -513,7 +513,46 @@
   }
 
   body .TypingAni {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  body .CircleTextPosition1 {
+    top: -2.9rem;
+    left: 0.7rem;
+    font-size: 0.4rem;
+  }
+
+  body .CircleTextPosition2 {
+    top: 0.3rem;
+    left: 3.2rem;
+    font-size: 0.4rem;
+  }
+
+  body .CircleTextPosition3 {
+    top: 2.7rem;
+    font-size: 0.4rem;
+  }
+
+  body .CircleTextPosition4 {
+    top: 0.5rem;
+    left: -4.2rem;
+    font-size: 0.4rem;
+  }
+
+  body .CircleTextPosition5 {
+    top: -1.9rem;
+    left: -4rem;
+    font-size: 0.4rem;
+  }
+
+  body .SecondSceneSvgText {
+    font-size: 0.45rem;
+  }
+
+  body .SecondPartText {
+    right: 35%;
   }
 }
 
@@ -538,13 +577,13 @@
 
   body .CircleTextPosition4 {
     top: 0.8rem;
-    left: -4.9rem;
+    left: -4.2rem;
     font-size: 0.4rem;
   }
 
   body .CircleTextPosition5 {
     top: -2.5rem;
-    left: -4.8rem;
+    left: -3.5rem;
     font-size: 0.4rem;
   }
 

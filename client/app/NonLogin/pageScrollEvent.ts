@@ -133,13 +133,19 @@ function setLayout() {
 }
 
 function Responsive() {
-  if (window.innerWidth <= 540) {
+  if (window.innerWidth <= 450) {
+    sceneInfo[0].values.svgContainer_left_moveLeft = [
+      50,
+      19,
+      { start: 0.45, end: 0.55 },
+    ];
+  } else if (window.innerWidth <= 540) {
     sceneInfo[0].values.svgContainer_left_moveLeft = [
       50,
       22,
       { start: 0.45, end: 0.55 },
     ];
-  } else if (window.innerHeight <= 640) {
+  } else if (window.innerWidth <= 640) {
     sceneInfo[0].values.svgContainer_left_moveLeft = [
       50,
       24,
