@@ -1,0 +1,33 @@
+.cardSize {
+  width: 25%;
+  height: 100%;
+}
+
+.cardStyle {
+  background-color: var(--white);
+  border: 1px solid var(--purple08);
+  border-radius: 5px;
+}
+
+.addWorkPagePosition {
+  bottom: 5%;
+  left: 0;
+}
+
+.addWorkPageSize {
+  width: 100%;
+  height: 95%;
+  background-color: yellow;
+}
+
+.buttonSize {
+  width: 60%;
+}
+
+.halfHeight {
+  transform: translateY(15%);
+}
+
+.cursorRowResize {
+  cursor: row-resize;
+}

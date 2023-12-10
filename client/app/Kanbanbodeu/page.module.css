@@ -1,0 +1,28 @@
+.sectionHeightSize {
+  height: calc(100vh - 5rem);
+}
+
+.createWorkStyle {
+  width: 100%;
+}
+
+.createWorkCardContainer {
+  width: 20%;
+}
+
+.workCardContainer {
+  width: 80%;
+}
+
+.plusStyle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--black);
+  color: #fff;
+  font-size: 2rem;
+}
+
+.workSectionBackground {
+  background-color: var(--purple02);
+}

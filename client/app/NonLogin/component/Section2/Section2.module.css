@@ -64,6 +64,10 @@
   animation: cursorTwinkling 0.5s infinite alternate-reverse;
 }
 
+.Typing {
+  pointer-events: none;
+}
+
 @keyframes cursorTwinkling {
   0% {
     opacity: 1;

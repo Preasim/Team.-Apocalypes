@@ -68,7 +68,10 @@ export default function Section2(props: propsType) {
       <div
         className={`activeSceneBlock1 fixed ${style.lastSceneTextPosition} fontSize2 ${style.FirstSceneTextLineHeight} krTitle fontWeight900  ${style.lastSceneTextCenter} `}
       >
-        <p className="opacityNone fontSize3 TypingAni" id="typingContainer">
+        <p
+          className={`opacityNone fontSize3 TypingAni ${style.Typing}`}
+          id="typingContainer"
+        >
           <span className="typing spaceNoWrap"></span>
           <span className={`cursor ${style.latSceneCursorStyle}  opacityNone`}>
             |

@@ -50,11 +50,11 @@
 }
 
 .mr2 {
-  margin-right: 1rem;
+  margin-right: 2rem;
 }
 
 .mr3 {
-  margin-right: 1rem;
+  margin-right: 3rem;
 }
 
 .ml1 {
@@ -194,4 +194,12 @@
 
 .spaceNoWrap {
   white-space: nowrap;
+}
+
+.cursorPointer {
+  cursor: pointer;
+}
+
+.BoxSizingborderBox {
+  box-sizing: border-box;
 }

@@ -1,0 +1,69 @@
+.LoginHeader {
+  width: 100%;
+  height: 5rem;
+  box-shadow: 0 3px 10px rgba(208, 162, 247, 0.15);
+}
+
+.labelContainer {
+  width: 25px;
+  height: 20px;
+  position: relative;
+  cursor: pointer;
+}
+
+.labelStyle {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.hambergerMenuBar {
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  display: block;
+  background-color: var(--purple08);
+  border-radius: 10px;
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.hambergerMenuBar:nth-of-type(1) {
+  top: 0;
+  left: 0;
+}
+.hambergerMenuBar:nth-of-type(2) {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.hambergerMenuBar:nth-of-type(3) {
+  bottom: 0%;
+  left: 0;
+}
+
+input[id="hamberger"]:checked ~ .hambergerMenuBar:nth-of-type(1) {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+input[id="hamberger"]:checked ~ .hambergerMenuBar:nth-of-type(3) {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+input[id="hamberger"]:checked ~ .hambergerMenuBar:nth-of-type(2) {
+  opacity: 0;
+}
+
+.figureSize {
+  height: 50%;
+}
+
+.figureStyle {
+  border-radius: 50%;
+  overflow: hidden;
+}
