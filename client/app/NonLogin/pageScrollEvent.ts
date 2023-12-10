@@ -133,7 +133,13 @@ function setLayout() {
 }
 
 function Responsive() {
-  if (window.innerWidth <= 450) {
+  if (window.innerWidth <= 380) {
+    sceneInfo[0].values.svgContainer_left_moveLeft = [
+      50,
+      22,
+      { start: 0.45, end: 0.55 },
+    ];
+  } else if (window.innerWidth <= 450) {
     sceneInfo[0].values.svgContainer_left_moveLeft = [
       50,
       19,
