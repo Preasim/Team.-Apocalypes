@@ -5,6 +5,7 @@ import com.apocalypse.demuu.entity.Member;
 import com.apocalypse.demuu.mapper.MemberMapper;
 import com.apocalypse.demuu.response.MultiResponseDto;
 import com.apocalypse.demuu.response.SingleResponseDto;
+import com.apocalypse.demuu.security.LoginMemberId;
 import com.apocalypse.demuu.service.MemberService;
 import com.apocalypse.demuu.utils.UriCreator;
 import lombok.AllArgsConstructor;
@@ -54,6 +55,7 @@ public class MemberController {
 
     @PatchMapping("/{member-id}")
     public ResponseEntity patchMemberName(@PathVariable("member-id") @Positive long memberId,
+//                                          @LoginMemberId Long loginId,
                                           @Valid @RequestBody MemberDto.PatchDto requestBody) {
         Member member = mapper.patchToMember(requestBody);
         member.setMemberId(memberId);
