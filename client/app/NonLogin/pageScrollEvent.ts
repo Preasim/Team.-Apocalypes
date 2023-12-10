@@ -133,7 +133,13 @@ function setLayout() {
 }
 
 function Responsive() {
-  if (window.innerWidth <= 640) {
+  if (window.innerWidth <= 540) {
+    sceneInfo[0].values.svgContainer_left_moveLeft = [
+      50,
+      22,
+      { start: 0.45, end: 0.55 },
+    ];
+  } else if (window.innerHeight <= 640) {
     sceneInfo[0].values.svgContainer_left_moveLeft = [
       50,
       24,
@@ -402,8 +408,8 @@ export function init(setTypingState: Dispatch<SetStateAction<boolean>>) {
   yoffset = window.scrollY;
   current = current + (yoffset - current) * acc;
   setSceneInfo();
-  Responsive();
   setLayout();
+  Responsive();
   scrollLoop();
   playAnimation();
 }
