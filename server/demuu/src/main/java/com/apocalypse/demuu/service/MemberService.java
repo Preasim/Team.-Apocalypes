@@ -9,6 +9,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
@@ -38,7 +39,10 @@ public class MemberService {
                 page, size, Sort.by("memberId").descending()));
     }
 
+    @Transactional
     public Member updateMemberName(Member member) {
+//        if (loginId != member.getMemberId()) throw new BusinessLogicException(ExceptionCode.NO_PERMISSION_EDITING_POST);
+
         Member findMember = findVerifiedMember(member.getMemberId());
         findMember.setName(member.getName());
         return findMember;
