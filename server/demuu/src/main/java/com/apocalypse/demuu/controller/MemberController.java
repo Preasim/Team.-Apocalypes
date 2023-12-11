@@ -5,7 +5,6 @@ import com.apocalypse.demuu.entity.Member;
 import com.apocalypse.demuu.mapper.MemberMapper;
 import com.apocalypse.demuu.response.MultiResponseDto;
 import com.apocalypse.demuu.response.SingleResponseDto;
-import com.apocalypse.demuu.security.LoginMemberId;
 import com.apocalypse.demuu.service.MemberService;
 import com.apocalypse.demuu.utils.UriCreator;
 import lombok.AllArgsConstructor;
@@ -77,5 +76,12 @@ public class MemberController {
         Member deleteMember = memberService.updateDeleteStatus(memberId);
         MemberDto.ResponseDto response = mapper.memberToResponse(deleteMember);
         return new ResponseEntity<>((response), HttpStatus.OK);
+    }
+
+    // 테스트 용도 등으로 유저는 사용 불가
+    @DeleteMapping("{member-id}")
+    public ResponseEntity deleteMember(@PathVariable("member-id") @Positive long memberId) {
+        memberService.deleteMember(memberId);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }
