@@ -1,8 +1,8 @@
 package com.apocalypse.demuu.dto;
 
 import com.apocalypse.demuu.entity.Member;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -12,7 +12,7 @@ public class MemberDto {
 
     @Getter
     @Setter
-    @NoArgsConstructor
+    @AllArgsConstructor
     public static class PostDto {
         @NotBlank
         private String name;
@@ -27,18 +27,18 @@ public class MemberDto {
 
     @Getter
     @Setter
-    @NoArgsConstructor
+    @AllArgsConstructor
     public static class PatchDto {
         @NotBlank
         private String name;
 
-        @NotBlank
-        private String email;
+//        @NotBlank
+//        private String email;
     }
 
     @Getter
     @Setter
-    @NoArgsConstructor
+    @AllArgsConstructor
     public static class ResponseDto {
         private long memberId;
         private String name;
