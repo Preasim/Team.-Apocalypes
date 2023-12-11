@@ -48,6 +48,8 @@ public class MemberService {
         return findMember;
     }
 
+    // 계정 복구
+    @Transactional
     public Member updateActiveStatus(long memberId) {
         Member findMember = findVerifiedMember(memberId);
         findMember.setStatus(Member.Status.MEMBER_ACTIVE);
@@ -55,6 +57,7 @@ public class MemberService {
     }
 
     // 유저 탈퇴
+    @Transactional
     public Member updateDeleteStatus(long memberId) {
         Member findMember = findVerifiedMember(memberId);
         findMember.setStatus(Member.Status.MEMBER_DELETE);
@@ -62,7 +65,7 @@ public class MemberService {
     }
 
     // 테스트용으로만 사용
-    public void deleteMember(Long loginId, long memberId) {
+    public void deleteMember(long memberId) {
         Member findMember = findVerifiedMember(memberId);
         memberRepository.delete(findMember);
     }
