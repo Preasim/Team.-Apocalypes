@@ -3,6 +3,7 @@ package com.apocalypse.demuu.dto;
 import com.apocalypse.demuu.entity.Member;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -28,7 +29,9 @@ public class MemberDto {
     @Getter
     @Setter
     @AllArgsConstructor
+    @NoArgsConstructor
     public static class PatchDto {
+
         @NotBlank
         private String name;
 
@@ -43,6 +46,8 @@ public class MemberDto {
         private long memberId;
         private String name;
         private String email;
+        private String password;
+        private String memberCode;
         private String image;
         private Member.Status status;
         private Timestamp createdAt;
