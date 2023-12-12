@@ -1,0 +1,47 @@
+= TETO
+:sectnums:
+:toc: left
+:toclevels: 4
+:toc-title: Table of Contents
+:source-highlighter: prettify
+
+Demuu <preasim.kr@gmail.com>
+
+v1.0.0, 2023.12.13
+
+***
+== MemberController
+=== 회원 등록
+.curl-request
+include::{snippets}/post-member/curl-request.adoc[]
+
+.http-request
+include::{snippets}/post-member/http-request.adoc[]
+
+.request-fields
+include::{snippets}/post-member/request-fields.adoc[]
+
+.http-response
+include::{snippets}/post-member/http-response.adoc[]
+
+.response-headers
+include::{snippets}/post-member/response-headers.adoc[]
+
+=== 회원 이름 수정
+.curl-request
+include::{snippets}/patch-member-name/curl-request.adoc[]
+
+.http-request
+include::{snippets}/patch-member-name/http-request.adoc[]
+
+.path-parameters
+include::{snippets}/patch-member-name/path-parameters.adoc[]
+
+.request-fields
+include::{snippets}/patch-member-name/request-fields.adoc[]
+
+.http-response
+include::{snippets}/patch-member-name/http-response.adoc[]
+
+.response-fields
+include::{snippets}/patch-member-name/response-fields.adoc[]
