@@ -1,6 +1,7 @@
 package com.apocalypse.demuu.entity;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -9,6 +10,7 @@ import java.sql.Timestamp;
 @Getter
 @Setter
 @Entity
+@NoArgsConstructor
 public class Member {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,7 +22,7 @@ public class Member {
 
     private String password;
 
-    private long memberCode;
+    private String memberCode;
 
     private String image;
 
@@ -42,4 +44,16 @@ public class Member {
             this.status = status;
         }
     }
+
+    @PrePersist
+    protected void onCreate() {
+        this.createdAt = new Timestamp(System.currentTimeMillis());
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+        this.modifiedAt = new Timestamp(System.currentTimeMillis());
+    }
+
+
 }
