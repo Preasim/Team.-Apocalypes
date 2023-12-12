@@ -12,18 +12,35 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
+import java.util.Random;
 
 @Service
 @AllArgsConstructor
 public class MemberService {
     private final MemberRepository memberRepository;
 
+    @Transactional
     public Member createMember(Member member) {
         verifyExistEmail(member.getEmail());
         Member savedMember = memberRepository.save(member);
+        savedMember.setMemberCode(createMemberCode(String.valueOf(member.getMemberId())));
         return savedMember;
     }
 
+    // memberCode(친구 추가용) 자동생성
+    private String createMemberCode(String memberId) {
+        String[] alphabet = new String[]{"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"};
+        Random random = new Random();
+        StringBuilder randomCode = new StringBuilder();
+
+        for (int i=0; i<4; i++) {
+            int randomIdx = random.nextInt(alphabet.length);
+            randomCode.append(alphabet[randomIdx]);
+        }
+
+        String memberCode = randomCode.toString() + memberId;
+        return memberCode;
+    }
 
 //    public Member uploadImage(long memberId, MultipartFile imageFile) {
 //        Member member = findVerifiedMember(memberId);
