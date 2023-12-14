@@ -36,7 +36,7 @@ export default function Section2(props: propsType) {
             id="messageC"
           >
             <p
-              className={`krTitle fontSize2 fontWeight900 mb2 ${style.FirstSceneTitleTextFontSize} ThirdSceneFirstTitleText`}
+              className={`fontSize2 fontWeight900 mb2 ${style.FirstSceneTitleTextFontSize} ThirdSceneFirstTitleText`}
             >
               업무 진행 상황 추적
             </p>
@@ -52,7 +52,7 @@ export default function Section2(props: propsType) {
             id="messageD"
           >
             <p
-              className={`fontWeight900 fontSize2 mb2 krTitle ${style.FirstSceneTitleTextFontSize} ThirdSceneFirstTitleText `}
+              className={`fontWeight900 fontSize2 mb2 ${style.FirstSceneTitleTextFontSize} ThirdSceneFirstTitleText `}
             >
               사람들과 일정 공유
             </p>
@@ -66,7 +66,7 @@ export default function Section2(props: propsType) {
         </div>
       </div>
       <div
-        className={`activeSceneBlock1 fixed ${style.lastSceneTextPosition} fontSize2 ${style.FirstSceneTextLineHeight} krTitle fontWeight900  ${style.lastSceneTextCenter} `}
+        className={`activeSceneBlock1 fixed ${style.lastSceneTextPosition} fontSize2 ${style.FirstSceneTextLineHeight} fontWeight900  ${style.lastSceneTextCenter} `}
       >
         <p
           className={`opacityNone fontSize3 TypingAni ${style.Typing}`}

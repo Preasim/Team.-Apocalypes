@@ -7,6 +7,7 @@ import NonLoginHeader from "../component/NonLoginHeader/Header";
 import LoginHeader from "@/component/LoginHeader/Header";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
+import "react-datepicker/dist/react-datepicker.css";
 import { getCookie, setCookie } from "cookies-next";
 config.autoAddCss = false;
 const inter = Inter({ subsets: ["latin"] });

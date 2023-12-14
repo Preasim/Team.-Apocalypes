@@ -1,22 +1,17 @@
 import style from "./page.module.css";
 import Card from "./component/WorkCard/WorkCard";
+import AddWork from "./component/addWork/AddWork";
 export default function page() {
+  const CardLength = ["상태없음", "대기", "진행중", "완료"];
   return (
     <section className={`flex widthFull ${style.sectionHeightSize}`}>
-      <div className={`${style.createWorkCardContainer} heightFull`}>
-        <ul className={`heightFull flex flexCol  alignCenter mx2 `}>
-          <li
-            className={`${style.createWorkStyle} flex alignCenter fontSize2 mt3`}
-          >
-            <h3 className="krTitle fontWeight900">Works</h3>
-            <button className={`mlAuto ${style.plusStyle}`}>+</button>
-          </li>
-        </ul>
-      </div>
+      <AddWork />
       <div
-        className={`${style.workCardContainer} ${style.workSectionBackground} p2`}
+        className={`flex justifySpace ${style.workCardContainer} ${style.workSectionBackground} p2 workCardContainer`}
       >
-        <Card title="상태없음" />
+        {CardLength.map((item) => (
+          <Card title={item} />
+        ))}
       </div>
     </section>
   );

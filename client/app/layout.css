@@ -1,5 +1,6 @@
-@import url("/globalCss/reset.module.css");
 @import url("/assets/font.module.css");
+@import url("/globalCss/reset.module.css");
+@import url("./datePicker.css");
 @import url("/globalCss/globalClass.module.css");
 @import url("./NonLogin/page.css");
 @import url("./NonLogin/component/Section1/Section1SecondScene/Section1.css");

@@ -14,7 +14,7 @@ export default function Section1FirstScene() {
       <div className={`flex flexCol relative body FirstPartText`} id="messageA">
         <div className={`flex flexCol `}>
           <p
-            className={`fontWeight900 mb2 krTitle ${style.SecondPartTextTitleFontSize} FirstSceneTitle spaceNoWrap`}
+            className={`fontWeight900 mb2 ${style.SecondPartTextTitleFontSize} FirstSceneTitle spaceNoWrap`}
           >
             하루 일정을 계획하고 공유하는 캘린더
           </p>

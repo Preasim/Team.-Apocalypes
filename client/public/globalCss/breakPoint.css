@@ -98,6 +98,14 @@
   body .ThirdSceneSecondDescText {
     font-size: 0.9rem;
   }
+
+  body .WorkCard {
+    width: 23%;
+  }
+
+  body .workCardContainer {
+    padding: 2rem 1rem;
+  }
 }
 
 @media screen and (max-width: 1100px) {
@@ -154,6 +162,37 @@
     top: -6rem;
     right: 1%;
   }
+
+  body .workCardContainer {
+    flex-wrap: wrap;
+    row-gap: 2%;
+  }
+
+  body .WorkCard {
+    width: 48%;
+  }
+
+  body .WorkCard {
+    height: 50%;
+  }
+
+  body .AddWorkContainer {
+    bottom: 11%;
+  }
+
+  body .AddWorkTitle {
+    font-size: 1.5rem;
+  }
+
+  body .AddWorkButtonStyle {
+    width: 35px;
+    height: 35px;
+    font-size: 1.5rem;
+  }
+
+  body .addWorkPageStyle {
+    bottom: 11%;
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -204,6 +243,9 @@
 
   body .ThirdSceneText {
     width: 70%;
+  }
+  body .createWork {
+    margin: 0 1rem;
   }
 }
 
@@ -301,6 +343,20 @@
 
   body .ThirdSceneText {
     width: 60%;
+  }
+
+  body .createWork {
+    margin: 0 0.8rem;
+  }
+
+  body .AddWorkTitle {
+    font-size: 1.2rem;
+  }
+
+  body .AddWorkButtonStyle {
+    width: 30px;
+    height: 30px;
+    font-size: 1.2rem;
   }
 }
 

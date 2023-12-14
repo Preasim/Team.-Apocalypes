@@ -144,13 +144,13 @@ export default function Section1SecondScene() {
             key={index}
             className={`absolute CircleTextPosition${
               index + 1
-            } spaceNoWrap fontSize1 krTitle CircleGraphTextSideFadeOnAni opacityNone `}
+            } spaceNoWrap fontSize1  CircleGraphTextSideFadeOnAni opacityNone `}
           >
             {item}
           </span>
         ))}
         <p
-          className={`absolute spaceNoWrap ${style.graphTextStyle} fontWeight700 krTitle CircleGraphTextFadeOnAni opacityNone ${style.CircleSvgTextPosition} SecondSceneSvgText`}
+          className={`absolute spaceNoWrap ${style.graphTextStyle} fontWeight700 CircleGraphTextFadeOnAni opacityNone ${style.CircleSvgTextPosition} SecondSceneSvgText`}
         >
           하루를 계획하세요
         </p>
@@ -160,7 +160,7 @@ export default function Section1SecondScene() {
         id="messageB"
       >
         <p
-          className={`fontSize2 fontWeight900 mb2 krTitle ${style.SvgRightTitleSize} SecondSceneRightTitleText`}
+          className={`fontSize2 fontWeight900 mb2 ${style.SvgRightTitleSize} SecondSceneRightTitleText`}
         >
           완벽한 루틴 실천
         </p>

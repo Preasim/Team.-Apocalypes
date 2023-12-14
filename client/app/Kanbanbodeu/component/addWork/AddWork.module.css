@@ -1,0 +1,15 @@
+.createWorkCardContainer {
+  width: 20%;
+}
+.createWorkStyle {
+  width: 100%;
+}
+
+.plusStyle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--black);
+  color: #fff;
+  font-size: 2rem;
+}

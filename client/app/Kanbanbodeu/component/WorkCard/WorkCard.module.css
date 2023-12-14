@@ -1,5 +1,5 @@
 .cardSize {
-  width: 25%;
+  width: 22%;
   height: 100%;
 }
 
@@ -10,24 +10,96 @@
 }
 
 .addWorkPagePosition {
-  bottom: 5%;
+  bottom: 7%;
   left: 0;
 }
 
 .addWorkPageSize {
   width: 100%;
-  height: 95%;
-  background-color: yellow;
+  height: 0%;
+  border-top: 1px solid var(--purple08);
+  border-bottom: 1px solid var(--purple08);
+}
+
+.addWOrkPageStyle {
+  border-radius: 5px;
+  transition: all 0.5s;
 }
 
 .buttonSize {
   width: 60%;
 }
 
-.halfHeight {
-  transform: translateY(15%);
+.buttonSize span {
+  pointer-events: none;
+}
+
+.cursorPosition {
+  width: 100%;
+  height: 1px;
+  top: 0;
+  left: 0;
+  z-index: 10;
 }
 
 .cursorRowResize {
   cursor: row-resize;
+}
+
+.cancelButtonPosition {
+  right: 0;
+  top: 0;
+}
+
+.cancelButtonStyle {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.addWorkCardStyle {
+  justify-content: space-between;
+}
+
+.addWorkCardUlStyle {
+  justify-content: space-between;
+  padding: 3rem 2rem 3rem 2rem;
+  border-radius: 5px;
+}
+
+.workTitleStyle {
+  width: 100%;
+  border: 0;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid rgba(189, 189, 189, 0.3);
+  font-size: 1.1rem;
+}
+
+.addWorkCardUlStyle li > div:nth-of-type(1) {
+  font-size: 1.3rem;
+}
+
+.addWorkCardUlStyle li > div:nth-of-type(2) {
+  margin-left: 1.2rem;
+}
+
+.addWorkCardUlStyle li div input {
+  width: 100%;
+  border: 0;
+  font-size: 1rem;
+}
+
+.addWorkCardUlStyle li div input::placeholder {
+  color: var(--black);
+}
+
+.CardTitle {
+  font-size: 1.6rem;
+}
+
+.PlusStyle {
+  margin-right: 0.3rem;
+}
+
+.hidden {
+  overflow: hidden;
 }
