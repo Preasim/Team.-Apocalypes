@@ -1,5 +1,6 @@
 package com.apocalypse.demuu.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -11,6 +12,7 @@ import java.sql.Timestamp;
 @Setter
 @Entity
 @NoArgsConstructor
+@AllArgsConstructor
 public class Member {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,6 +31,7 @@ public class Member {
     @Enumerated(EnumType.STRING)
     private Status status = Status.MEMBER_ACTIVE;
 
+    @Column(updatable = false)
     private Timestamp createdAt;
 
     private Timestamp modifiedAt;
@@ -54,6 +57,4 @@ public class Member {
     protected void onUpdate() {
         this.modifiedAt = new Timestamp(System.currentTimeMillis());
     }
-
-
 }
