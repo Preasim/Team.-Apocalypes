@@ -448,7 +448,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_membercontroller">1. MemberController</a>
 <ul class="sectlevel2">
 <li><a href="#_회원_등록">1.1. 회원 등록</a></li>
-<li><a href="#_회원_이름_수정">1.2. 회원 이름 수정</a></li>
+<li><a href="#_단일_회원_조회">1.2. 단일 회원 조회</a></li>
+<li><a href="#_전체_회원_조회_페이지">1.3. 전체 회원 조회 (페이지)</a></li>
+<li><a href="#_회원_이름_수정">1.4. 회원 이름 수정</a></li>
+<li><a href="#_회원_상태_변경_active">1.5. 회원 상태 변경 (Active)</a></li>
+<li><a href="#_회원_상태_변경_delete">1.6. 회원 상태 변경 (Delete)</a></li>
+<li><a href="#_회원_삭제_테스트_용도">1.7. 회원 삭제 (테스트 용도)</a></li>
 </ul>
 </li>
 </ul>
@@ -472,19 +477,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="_회원_등록">1.1. 회원 등록</h3>
 <div class="listingblock">
-<div class="title">curl-request</div>
-<div class="content">
-<pre class="prettyprint highlight"><code data-lang="bash">$ curl 'http://localhost:8080/members/signup' -i -X POST \
-    -H 'Content-Type: application/json;charset=UTF-8' \
-    -H 'Accept: application/json' \
-    -d '{
-  "name" : "Demuu",
-  "email" : "demuu@example.com",
-  "password" : "testpassword"
-}'</code></pre>
-</div>
-</div>
-<div class="listingblock">
 <div class="title">http-request</div>
 <div class="content">
 <pre class="prettyprint highlight nowrap"><code data-lang="http">POST /members/signup HTTP/1.1
@@ -499,6 +491,19 @@ Host: localhost:8080
   "password" : "testpassword"
 }</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>-</p>
+</div>
+<div class="listingblock">
+<div class="title">http-response</div>
+<div class="content">
+<pre class="prettyprint highlight nowrap"><code data-lang="http">HTTP/1.1 201 Created
+Location: /members/1</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>-</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 1. request-fields</caption>
@@ -532,46 +537,299 @@ Host: localhost:8080
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>-</p>
+</div>
+<div class="paragraph">
+<p>-</p>
+</div>
+<div class="paragraph">
+<p>-</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_단일_회원_조회">1.2. 단일 회원 조회</h3>
+<div class="listingblock">
+<div class="title">http-request</div>
+<div class="content">
+<pre class="prettyprint highlight nowrap"><code data-lang="http">GET /members/1 HTTP/1.1
+Accept: application/json
+Host: localhost:8080</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>-</p>
+</div>
 <div class="listingblock">
 <div class="title">http-response</div>
 <div class="content">
-<pre class="prettyprint highlight nowrap"><code data-lang="http">HTTP/1.1 201 Created
-Location: /members/1</code></pre>
+<pre class="prettyprint highlight nowrap"><code data-lang="http">HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 321
+
+{
+  "data" : {
+    "memberId" : 1,
+    "name" : "Demuu",
+    "email" : "demuu@example.com",
+    "password" : "test1234",
+    "memberCode" : "null",
+    "image" : "null",
+    "status" : "MEMBER_ACTIVE",
+    "createdAt" : "2023-12-13T10:30:00.000+09:00",
+    "modifiedAt" : "2023-12-13T10:30:00.000+09:00"
+  }
+}</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>-</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 2. response-headers</caption>
+<caption class="title">Table 2. response-fields</caption>
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Path</th>
+<th class="tableblock halign-left valign-top">Type</th>
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Location</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Location header. 등록된 리소스의 URI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>data</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Object</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">결과 데이터</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>data.memberId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Number</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">회원 식별자</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>data.name</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">이름</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>data.email</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">이메일</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>data.password</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">비밀번호</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>data.memberCode</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">유저 코드</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>data.image</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">이미지</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>data.status</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>data.status</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">회원 상태: 활동중 / 탈퇴 상태</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>data.createdAt</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">생성 시간</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>data.modifiedAt</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">수정 시간</p></td>
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>-</p>
+</div>
+<div class="paragraph">
+<p>-</p>
+</div>
+<div class="paragraph">
+<p>-</p>
+</div>
 </div>
 <div class="sect2">
-<h3 id="_회원_이름_수정">1.2. 회원 이름 수정</h3>
+<h3 id="_전체_회원_조회_페이지">1.3. 전체 회원 조회 (페이지)</h3>
 <div class="listingblock">
-<div class="title">curl-request</div>
+<div class="title">http-request</div>
 <div class="content">
-<pre class="prettyprint highlight"><code data-lang="bash">$ curl 'http://localhost:8080/members/1' -i -X PATCH \
-    -H 'Content-Type: application/json;charset=UTF-8' \
-    -H 'Accept: application/json' \
-    -d '{
-  "name" : "Demuu"
-}'</code></pre>
+<pre class="prettyprint highlight nowrap"><code data-lang="http">GET /members?page=1&amp;size=10 HTTP/1.1
+Accept: application/json
+Host: localhost:8080</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>-</p>
+</div>
+<div class="listingblock">
+<div class="title">http-response</div>
+<div class="content">
+<pre class="prettyprint highlight nowrap"><code data-lang="http">HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 744
+
+{
+  "data" : [ {
+    "memberId" : 1,
+    "name" : "Demuu1",
+    "email" : "demuu1@example.com",
+    "password" : "test1111",
+    "memberCode" : "test1",
+    "image" : "null",
+    "status" : "MEMBER_ACTIVE",
+    "createdAt" : "2023-12-13T10:30:00.000+09:00",
+    "modifiedAt" : "2023-12-13T10:30:00.000+09:00"
+  }, {
+    "memberId" : 2,
+    "name" : "Demuu2",
+    "email" : "demuu2@example.com",
+    "password" : "test2222",
+    "memberCode" : "test2",
+    "image" : "null",
+    "status" : "MEMBER_ACTIVE",
+    "createdAt" : "2023-12-13T10:30:00.000+09:00",
+    "modifiedAt" : "2023-12-13T10:30:00.000+09:00"
+  } ],
+  "pageInfo" : {
+    "page" : 1,
+    "size" : 10,
+    "totalElements" : 2,
+    "totalPages" : 1
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>-</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. response-fields</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Path</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>data</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Array</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">결과 데이터</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>data[].memberId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Number</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">회원 식별자</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>data[].name</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">이름</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>data[].email</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">이메일</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>data[].password</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">비밀번호</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>data[].memberCode</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">유저 코드</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>data[].image</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">이미지</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>data[].status</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>data[].status</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">회원 상태: 활동중 / 탈퇴 상태</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>data[].createdAt</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">생성 시간</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>data[].modifiedAt</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">수정 시간</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pageInfo</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Object</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">페이지 정보</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pageInfo.page</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Number</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">페이지 번호</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pageInfo.size</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Number</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">페이지 사이즈</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pageInfo.totalElements</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Number</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">전체 건 수</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pageInfo.totalPages</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Number</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">전체 페이지 수</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>-</p>
+</div>
+<div class="paragraph">
+<p>-</p>
+</div>
+<div class="paragraph">
+<p>-</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_회원_이름_수정">1.4. 회원 이름 수정</h3>
 <div class="listingblock">
 <div class="title">http-request</div>
 <div class="content">
@@ -586,25 +844,9 @@ Host: localhost:8080
 }</code></pre>
 </div>
 </div>
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 3. /members/{member-id}</caption>
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>member-id</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">회원 식별자</p></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>-</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 4. request-fields</caption>
 <colgroup>
@@ -627,12 +869,15 @@ Host: localhost:8080
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>-</p>
+</div>
 <div class="listingblock">
 <div class="title">http-response</div>
 <div class="content">
 <pre class="prettyprint highlight nowrap"><code data-lang="http">HTTP/1.1 200 OK
 Content-Type: application/json
-Content-Length: 289
+Content-Length: 317
 
 {
   "data" : {
@@ -640,6 +885,7 @@ Content-Length: 289
     "name" : "Demuu",
     "email" : "demuu@example.com",
     "password" : "1234",
+    "memberCode" : "null",
     "image" : "null",
     "status" : "MEMBER_ACTIVE",
     "createdAt" : "2023-12-13T10:30:00.000+09:00",
@@ -647,6 +893,9 @@ Content-Length: 289
   }
 }</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>-</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 5. response-fields</caption>
@@ -689,6 +938,11 @@ Content-Length: 289
 <td class="tableblock halign-left valign-top"><p class="tableblock">비밀번호</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>data.memberCode</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">유저 코드</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>data.image</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">이미지</p></td>
@@ -710,6 +964,124 @@ Content-Length: 289
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>-</p>
+</div>
+<div class="paragraph">
+<p>-</p>
+</div>
+<div class="paragraph">
+<p>-</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_회원_상태_변경_active">1.5. 회원 상태 변경 (Active)</h3>
+<div class="listingblock">
+<div class="title">http-request</div>
+<div class="content">
+<pre class="prettyprint highlight nowrap"><code data-lang="http">PATCH /members/status/active/1 HTTP/1.1
+Accept: application/json
+Host: localhost:8080</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>-</p>
+</div>
+<div class="listingblock">
+<div class="title">http-response</div>
+<div class="content">
+<pre class="prettyprint highlight nowrap"><code data-lang="http">HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 317
+
+{
+  "data" : {
+    "memberId" : 1,
+    "name" : "Demuu",
+    "email" : "demuu@example.com",
+    "password" : "1234",
+    "memberCode" : "null",
+    "image" : "null",
+    "status" : "MEMBER_ACTIVE",
+    "createdAt" : "2023-12-13T10:30:00.000+09:00",
+    "modifiedAt" : "2023-12-13T10:30:00.000+09:00"
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>-</p>
+</div>
+<div class="paragraph">
+<p>-</p>
+</div>
+<div class="paragraph">
+<p>-</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_회원_상태_변경_delete">1.6. 회원 상태 변경 (Delete)</h3>
+<div class="listingblock">
+<div class="title">http-request</div>
+<div class="content">
+<pre class="prettyprint highlight nowrap"><code data-lang="http">PATCH /members/status/delete/1 HTTP/1.1
+Accept: application/json
+Host: localhost:8080</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>-</p>
+</div>
+<div class="listingblock">
+<div class="title">http-response</div>
+<div class="content">
+<pre class="prettyprint highlight nowrap"><code data-lang="http">HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 317
+
+{
+  "data" : {
+    "memberId" : 1,
+    "name" : "Demuu",
+    "email" : "demuu@example.com",
+    "password" : "1234",
+    "memberCode" : "null",
+    "image" : "null",
+    "status" : "MEMBER_DELETE",
+    "createdAt" : "2023-12-13T10:30:00.000+09:00",
+    "modifiedAt" : "2023-12-13T10:30:00.000+09:00"
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>-</p>
+</div>
+<div class="paragraph">
+<p>-</p>
+</div>
+<div class="paragraph">
+<p>-</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_회원_삭제_테스트_용도">1.7. 회원 삭제 (테스트 용도)</h3>
+<div class="listingblock">
+<div class="title">http-request</div>
+<div class="content">
+<pre class="prettyprint highlight nowrap"><code data-lang="http">DELETE /members/1 HTTP/1.1
+Host: localhost:8080</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>-</p>
+</div>
+<div class="listingblock">
+<div class="title">http-response</div>
+<div class="content">
+<pre class="prettyprint highlight nowrap"><code data-lang="http">HTTP/1.1 204 No Content</code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -717,7 +1089,7 @@ Content-Length: 289
 <div id="footer">
 <div id="footer-text">
 Version 0.0.1-SNAPSHOT<br>
-Last updated 2023-12-13 03:20:19 +0900
+Last updated 2023-12-14 07:55:16 +0900
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css">
