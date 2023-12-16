@@ -9,8 +9,8 @@ export default function page() {
       <div
         className={`flex justifySpace ${style.workCardContainer} ${style.workSectionBackground} p2 workCardContainer`}
       >
-        {CardLength.map((item) => (
-          <Card title={item} />
+        {CardLength.map((item, index) => (
+          <Card title={item} key={index} />
         ))}
       </div>
     </section>

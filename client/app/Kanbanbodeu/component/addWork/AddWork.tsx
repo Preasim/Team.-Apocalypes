@@ -10,7 +10,9 @@ export default function AddWork() {
   }, [ItemNum]);
 
   return (
-    <div className={`${style.createWorkCardContainer} heightFull`}>
+    <div
+      className={`${style.createWorkCardContainer} heightFull createWorkContainer`}
+    >
       <ul
         className={`heightFull flex flexCol  alignCenter mx2 addWorkContainer createWork`}
       >
@@ -28,7 +30,7 @@ export default function AddWork() {
           </button>
         </li>
         {addWorkArray.map((_, index) => (
-          <li className="mb1 detailDom" key={index}>
+          <li className="mb1 detailLi" key={index}>
             <CreateWork />
           </li>
         ))}

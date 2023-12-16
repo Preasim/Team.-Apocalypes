@@ -1,0 +1,39 @@
+.react-datepicker-popper {
+  width: 13.6rem;
+  height: 15rem;
+}
+
+.react-datepicker {
+  width: 100%;
+  height: 100%;
+  left: -6%;
+}
+
+.react-datepicker__month-container {
+  width: 100%;
+  height: 100%;
+}
+
+.react-datepicker__header {
+  width: 100%;
+  height: 15%;
+}
+
+body .react-datepicker__month {
+  width: 100%;
+  height: 70%;
+  margin: 0;
+}
+
+.react-datepicker__current-month {
+  font-size: 0.8rem;
+}
+
+body .react-datepicker__day-names .react-datepicker__day-name {
+  font-size: 0.7rem;
+  margin: 0;
+}
+
+body .react-datepicker__week .react-datepicker__day {
+  margin: 0;
+}

@@ -32,9 +32,31 @@ export default function WorkCard(props: propsType) {
   }, []);
   return (
     <div
-      className={`flex flexCol justifyBetween ${style.cardSize} ${style.cardStyle} p1 BoxSizingborderBox relative WorkCard`}
+      className={`flex flexCol  ${style.cardSize} ${style.cardStyle} p1 BoxSizingborderBox relative WorkCard `}
     >
-      <h4 className={`${style.CardTitle} mainText`}>{props.title}</h4>
+      <h4 className={`${style.CardTitle} mainText mb2`}>{props.title}</h4>
+      <div
+        className={`${style.registrationWork} flex flexCol justifyBetween dragDom`}
+        draggable="true"
+      >
+        <p className="mb1">사용자 정의 요구 사항 정의서</p>
+        <div className="flex widthFull justifyBetween alignCenter">
+          <div className={`IconBox`}>
+            <button>
+              <FontAwesomeIcon icon={faList} />
+            </button>
+            <button>
+              <FontAwesomeIcon icon={faLink} />
+            </button>
+            <button>
+              <FontAwesomeIcon icon={faImage} />
+            </button>
+          </div>
+          <div className={`${style.DayTextBox}`}>
+            <span>3일 후</span>
+          </div>
+        </div>
+      </div>
       <div
         className={`draggable absolute ${style.addWorkPagePosition} ${style.addWorkPageSize} ${style.addWOrkPageStyle} addWorkPageStyle`}
       >
@@ -100,13 +122,12 @@ export default function WorkCard(props: propsType) {
                   <FontAwesomeIcon icon={faImage} />
                 </div>
                 <div>
-                  <label htmlFor="imgInput" className="imgInput">
+                  <label className="imgInput">
                     <input
                       placeholder="사진 추가"
                       type="file"
                       accept="image/*"
                       className={`${style.imgInput} displayNone`}
-                      id="imgInput"
                       onChange={(event) => {
                         imgInput(event, setImgName);
                       }}
@@ -120,7 +141,7 @@ export default function WorkCard(props: propsType) {
         </div>
       </div>
       <button
-        className={`flex alignCenter cursorPointer fontSize1 ${style.buttonSize}`}
+        className={`flex alignCenter cursorPointer fontSize1 ${style.buttonSize} ${style.buttonPosition}`}
         onClick={AddWorkClickHandler}
       >
         <span className={`${style.PlusStyle}`}>+</span>

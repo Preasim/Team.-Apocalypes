@@ -10,7 +10,7 @@ export function removeWorkDom(
   event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
 ) {
   const target = event.target as HTMLButtonElement;
-  const findRemoveDom = target.closest(".detailDom");
+  const findRemoveDom = target.closest(".detailLi");
   findRemoveDom?.remove();
 }
 

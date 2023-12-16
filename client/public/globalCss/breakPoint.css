@@ -69,6 +69,14 @@
   body .ThirdSceneFigureContainer {
     left: calc(20% - 150px);
   }
+
+  body .createWorkContainer {
+    width: 20%;
+  }
+
+  body .workCardContainer {
+    width: 80%;
+  }
 }
 
 @media screen and (max-width: 1280px) {
@@ -97,10 +105,6 @@
   }
   body .ThirdSceneSecondDescText {
     font-size: 0.9rem;
-  }
-
-  body .WorkCard {
-    width: 23%;
   }
 
   body .workCardContainer {
@@ -166,14 +170,6 @@
   body .workCardContainer {
     flex-wrap: wrap;
     row-gap: 2%;
-  }
-
-  body .WorkCard {
-    width: 48%;
-  }
-
-  body .WorkCard {
-    height: 50%;
   }
 
   body .AddWorkContainer {
@@ -246,6 +242,24 @@
   }
   body .createWork {
     margin: 0 1rem;
+  }
+
+  body .WorkCard {
+    height: 22rem;
+    width: 48%;
+  }
+
+  body .addWorkPageStyle {
+    bottom: 12%;
+  }
+
+  .react-datepicker {
+    top: -45%;
+    left: -6%;
+  }
+
+  .react-datepicker__triangle {
+    display: none;
   }
 }
 
@@ -350,13 +364,21 @@
   }
 
   body .AddWorkTitle {
-    font-size: 1.2rem;
+    font-size: 1.8rem;
   }
 
   body .AddWorkButtonStyle {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     font-size: 1.2rem;
+  }
+
+  body .createWorkContainer {
+    width: 30%;
+  }
+
+  body .workCardContainer {
+    width: 70%;
   }
 }
 
@@ -459,6 +481,20 @@
   body .TypingAni {
     font-size: 2rem;
   }
+
+  body .WorkCard {
+    width: 100%;
+    height: 30rem;
+    margin-bottom: 10%;
+  }
+
+  body .createWorkContainer {
+    width: 40%;
+  }
+
+  body .workCardContainer {
+    width: 60%;
+  }
 }
 
 @media screen and (max-width: 540px) {
@@ -524,6 +560,14 @@
 
   body .ThirdSceneFigureContainer {
     left: calc(32% - 150px);
+  }
+
+  body .createWorkContainer {
+    width: 45%;
+  }
+
+  body .workCardContainer {
+    width: 55%;
   }
 }
 
