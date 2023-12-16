@@ -68,14 +68,14 @@ public class MemberController {
     public ResponseEntity patchStatusActive(@PathVariable("member-id") @Positive long memberId) {
         Member activeMember = memberService.updateActiveStatus(memberId);
         MemberDto.ResponseDto response = mapper.memberToResponse(activeMember);
-        return new ResponseEntity<>((response), HttpStatus.OK);
+        return new ResponseEntity<>(new SingleResponseDto<>(response), HttpStatus.OK);
     }
 
     @PatchMapping("/status/delete/{member-id}")
     public ResponseEntity patchStatusDelete(@PathVariable("member-id") @Positive long memberId) {
         Member deleteMember = memberService.updateDeleteStatus(memberId);
         MemberDto.ResponseDto response = mapper.memberToResponse(deleteMember);
-        return new ResponseEntity<>((response), HttpStatus.OK);
+        return new ResponseEntity<>(new SingleResponseDto<>(response), HttpStatus.OK);
     }
 
     // 테스트 용도 등으로 유저는 사용 불가
