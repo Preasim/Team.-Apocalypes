@@ -169,7 +169,7 @@
 
   body .workCardContainer {
     flex-wrap: wrap;
-    row-gap: 2%;
+    row-gap: 2rem;
   }
 
   body .AddWorkContainer {
@@ -187,7 +187,7 @@
   }
 
   body .addWorkPageStyle {
-    bottom: 11%;
+    bottom: 7%;
   }
 }
 
@@ -245,7 +245,7 @@
   }
 
   body .WorkCard {
-    height: 22rem;
+    min-height: 22rem;
     width: 48%;
   }
 
@@ -484,7 +484,6 @@
 
   body .WorkCard {
     width: 100%;
-    height: 30rem;
     margin-bottom: 10%;
   }
 

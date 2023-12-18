@@ -1,5 +1,12 @@
+"use client";
 import Logo from "@/app/NonLogin/component/Logo/Logo";
 import style from "./Header.module.css";
+import {
+  HambergerMenuHandler,
+  useProfileMenuHandler,
+} from "./HeaderEventHandler";
+import SlideMenu from "./component/SliderMenu/SlideMenu";
+import DetailUserProfile from "./component/DetailUseProfile/DetailUserProfile";
 export default function LoginHeader() {
   return (
     <header className={`${style.LoginHeader} widthFull`}>
@@ -10,18 +17,20 @@ export default function LoginHeader() {
               <input type="checkBox" className="displayNone" id="hamberger" />
               <label
                 htmlFor={`hamberger`}
-                className={`${style.labelStyle} cursorPointer`}
+                className={`${style.labelStyle} cursorPointer hambergerMenu `}
+                onClick={HambergerMenuHandler}
               />
               <span className={`${style.hambergerMenuBar} hamberger`} />
               <span className={`${style.hambergerMenuBar} hamberger`} />
               <span className={`${style.hambergerMenuBar} hamberger`} />
+              <SlideMenu />
             </div>
             <div>
               <Logo />
             </div>
           </div>
         </li>
-        <li className="flex alignCenter heightFull">
+        <li className="flex alignCenter heightFull relative">
           <figure
             className={`${style.figureSize} ${style.figureStyle} cursorPointer`}
           >
@@ -29,8 +38,10 @@ export default function LoginHeader() {
               className="heightFull"
               src="/img/profile.png"
               alt="프로필 이미지"
+              onClick={useProfileMenuHandler}
             />
           </figure>
+          <DetailUserProfile />
         </li>
       </ul>
     </header>

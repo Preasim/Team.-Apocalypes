@@ -1,3 +1,7 @@
 .dragging {
   opacity: 0.5;
 }
+
+.WorkCard > .dragDom:last-of-type {
+  margin-bottom: 4rem;
+}

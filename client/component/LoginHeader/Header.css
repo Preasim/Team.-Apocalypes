@@ -1,0 +1,7 @@
+.sliderContainer.openSlider {
+  display: block;
+}
+
+.DetailUseProfile.openUserProfile {
+  display: flex;
+}

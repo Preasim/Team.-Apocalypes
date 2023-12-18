@@ -85,30 +85,10 @@ export function cancleAddWork(event: React.MouseEvent) {
   }
 }
 
-// function getDragAfterElement(container: any, x: number) {
-//   const draggableElements = [
-//     ...container.querySelectorAll(".draggable:not(.dragging)"),
-//   ];
-
-//   return draggableElements.reduce(
-//     (closest, child) => {
-//       const box = child.getBoundingClientRect();
-//       const offset = x - box.left - box.width / 2;
-//       // console.log(offset);
-//       if (offset < 0 && offset > closest.offset) {
-//         return { offset: offset, element: child };
-//       } else {
-//         return closest;
-//       }
-//     },
-//     { offset: Number.NEGATIVE_INFINITY },
-//   ).element;
-// }
-
 export function dragHandler() {
   const $ = (select: string) => document.querySelectorAll(select);
   const draggables = $(".dragDom");
-  const containers = $(".WorkCard");
+  const containers = $(".workCardBody");
 
   draggables.forEach((el) => {
     el.addEventListener("dragstart", () => {
@@ -142,6 +122,16 @@ export function dragHandler() {
 
   containers.forEach((container) => {
     container.addEventListener("dragover", (e: any) => {
+      e.preventDefault();
+      const afterElement = getDragAfterElement(container, e.clientY);
+      const draggable = document.querySelector(".dragging");
+      if (draggable) {
+        container.appendChild(draggable);
+        container.insertBefore(draggable, afterElement);
+      }
+    });
+
+    container.addEventListener("drop", (e: any) => {
       e.preventDefault();
       const afterElement = getDragAfterElement(container, e.clientY);
       const draggable = document.querySelector(".dragging");

@@ -1,18 +1,15 @@
 .cardSize {
   width: 22%;
-  height: 100%;
 }
 
 .cardStyle {
-  height: 100%;
   background-color: var(--white);
   border: 1px solid var(--purple08);
   border-radius: 5px;
-  flex-wrap: wrap;
 }
 
 .addWorkPagePosition {
-  bottom: 7%;
+  bottom: 3rem;
   left: 0;
 }
 
@@ -31,12 +28,6 @@
 
 .buttonSize {
   width: 60%;
-}
-
-.buttonPosition {
-  position: absolute;
-  bottom: 2%;
-  left: 5%;
 }
 
 .buttonSize span {
@@ -124,6 +115,22 @@
   margin: 0 auto 1rem auto;
 }
 
+.WorkCard .dragDom {
+  margin-bottom: 4rem;
+}
+
 .DayTextBox {
   font-size: 0.8rem;
+}
+
+.workCardBody {
+  width: 100%;
+}
+
+.workCardBottom {
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
 }
