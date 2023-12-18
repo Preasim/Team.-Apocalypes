@@ -185,10 +185,6 @@
     height: 35px;
     font-size: 1.5rem;
   }
-
-  body .addWorkPageStyle {
-    bottom: 7%;
-  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -247,10 +243,6 @@
   body .WorkCard {
     min-height: 22rem;
     width: 48%;
-  }
-
-  body .addWorkPageStyle {
-    bottom: 12%;
   }
 
   .react-datepicker {

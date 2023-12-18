@@ -88,7 +88,8 @@ export function cancleAddWork(event: React.MouseEvent) {
 export function dragHandler() {
   const $ = (select: string) => document.querySelectorAll(select);
   const draggables = $(".dragDom");
-  const containers = $(".workCardBody");
+  const containers = $(".WorkCard");
+  const appendCotainer = $(".workCardBody");
 
   draggables.forEach((el) => {
     el.addEventListener("dragstart", () => {
@@ -102,7 +103,7 @@ export function dragHandler() {
 
   function getDragAfterElement(container: any, y: number) {
     const draggableElements = [
-      ...container.querySelectorAll(".draggable:not(.dragging)"),
+      ...container.querySelectorAll(".dragDom:not(.dragging)"),
     ];
 
     return draggableElements.reduce(
@@ -120,14 +121,14 @@ export function dragHandler() {
     ).element;
   }
 
-  containers.forEach((container) => {
+  containers.forEach((container, index) => {
     container.addEventListener("dragover", (e: any) => {
       e.preventDefault();
       const afterElement = getDragAfterElement(container, e.clientY);
       const draggable = document.querySelector(".dragging");
-      if (draggable) {
-        container.appendChild(draggable);
-        container.insertBefore(draggable, afterElement);
+      if (appendCotainer && draggable) {
+        appendCotainer[index].appendChild(draggable);
+        appendCotainer[index].insertBefore(draggable, afterElement);
       }
     });
 
@@ -135,9 +136,9 @@ export function dragHandler() {
       e.preventDefault();
       const afterElement = getDragAfterElement(container, e.clientY);
       const draggable = document.querySelector(".dragging");
-      if (draggable) {
-        container.appendChild(draggable);
-        container.insertBefore(draggable, afterElement);
+      if (appendCotainer && draggable) {
+        appendCotainer[index].appendChild(draggable);
+        appendCotainer[index].insertBefore(draggable, afterElement);
       }
     });
   });

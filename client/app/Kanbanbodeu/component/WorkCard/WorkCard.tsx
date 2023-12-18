@@ -14,7 +14,7 @@ import { useEffect, useState } from "react";
 import {
   WorkCardSlideMouseDownHandler,
   AddWorkClickHandler,
-  cancleAddWork,
+  cancelAddWork,
   init,
 } from "./WorkCardHandler";
 import { imgInput } from "./WorkCardHandler";
@@ -36,10 +36,11 @@ export default function WorkCard(props: propsType) {
     >
       <div className={`widthFull ${style.workCardBody} workCardBody`}>
         <h4 className={`${style.CardTitle} mainText mb2`}>{props.title}</h4>
-        {Array.from({ length: 5 }).map(() => (
+        {Array.from({ length: 5 }).map((_, index) => (
           <div
             className={`${style.registrationWork} flex flexCol justifyBetween dragDom`}
             draggable="true"
+            key={index}
           >
             <p className="mb1">사용자 정의 요구 사항 정의서</p>
             <div className="flex widthFull justifyBetween alignCenter">
@@ -74,7 +75,7 @@ export default function WorkCard(props: propsType) {
           <div className={`widthFull heightFull ${style.hidden} relative`}>
             <button
               className={`absolute ${style.cancelButtonPosition} ${style.cancelButtonStyle} cursorPointer`}
-              onClick={cancleAddWork}
+              onClick={cancelAddWork}
             >
               <FontAwesomeIcon icon={faXmark} />
             </button>
