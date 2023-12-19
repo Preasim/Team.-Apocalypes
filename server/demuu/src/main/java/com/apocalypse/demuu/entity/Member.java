@@ -1,5 +1,6 @@
 package com.apocalypse.demuu.entity;
 
+import com.apocalypse.demuu.entity.kanban.Board;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -7,6 +8,8 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -56,5 +59,20 @@ public class Member {
     @PreUpdate
     protected void onUpdate() {
         this.modifiedAt = new Timestamp(System.currentTimeMillis());
+    }
+
+    @OneToMany(mappedBy = "member", cascade = {CascadeType.ALL})
+    private List<Board> boards = new ArrayList<>();
+
+    public void addBoards(Board board) {
+        this.boards.add(board);
+        board.setMember(this);
+    }
+
+    public void removeBoards(Board board) {
+        this.boards.remove(board);
+        if (board.getMember() != this) {
+            board.setMember(this);
+        }
     }
 }
