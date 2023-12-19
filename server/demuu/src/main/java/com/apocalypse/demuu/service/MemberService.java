@@ -47,10 +47,6 @@ public class MemberService {
 //        String fileUrl =
 //    }
 
-    public Member findMember(long memberId) {
-        return findVerifiedMember(memberId);
-    }
-
     public Page<Member> findMembers(int page, int size) {
         return memberRepository.findAll(PageRequest.of(
                 page, size, Sort.by("memberId").descending()));
@@ -94,7 +90,7 @@ public class MemberService {
         if (member.isPresent()) throw new BusinessLogicException(ExceptionCode.MEMBER_EXISTS);
     }
 
-    // 존재하는 회원인지 검색
+    // 회원 검색
     public Member findVerifiedMember(long memberId) {
         Optional<Member> optionalMember = memberRepository.findById(memberId);
         Member member = optionalMember.orElseThrow(
