@@ -1,5 +1,6 @@
 package com.apocalypse.demuu.service.kanban;
 
+import com.apocalypse.demuu.dto.kanban.BoardDto;
 import com.apocalypse.demuu.entity.Member;
 import com.apocalypse.demuu.entity.kanban.Board;
 import com.apocalypse.demuu.exception.BusinessLogicException;
@@ -10,8 +11,8 @@ import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -24,8 +25,8 @@ public class BoardService {
 
     public Board createBoard(Board board) {
         long memberId = board.getMember().getMemberId();
-        Member findMember = memberService.findVerifiedMember(memberId);
-        findMember.addBoards(board);
+        Member Member = memberService.findVerifiedMember(memberId);
+        Member.addBoards(board);
         return boardRepository.save(board);
     }
 
@@ -42,19 +43,32 @@ public class BoardService {
         return new PageImpl<>(boardList, PageRequest.of(page, size), boards.size());
     }
 
+    @Transactional
+    public Board updateBoard(long memberId, long boardId, BoardDto.Patch board) {
+        Board findBoard = findVerifiedBoard(boardId);
+        Member findMember = memberService.findVerifiedMember(memberId);
+
+        if (!findBoard.getMember().getMemberId().equals(findMember.getMemberId())) {
+            throw new BusinessLogicException(ExceptionCode.NO_PERMISSION_EDITING_POST);
+        } else {
+            if (board.getBoardName() != null) {
+                findBoard.setBoardName(board.getBoardName());
+            }
+        }
+
+        return findBoard;
+    }
 
     public void deleteBoard(long memberId, long boardId) {
         Board board = findVerifiedBoard(boardId);
         Member member = memberService.findVerifiedMember(memberId);
-
         member.removeBoards(board);
         boardRepository.delete(board);
     }
 
     public Board findVerifiedBoard(long boardId) {
         Optional<Board> optionalBoard = boardRepository.findById(boardId);
-        Board findBoard = optionalBoard.orElseThrow(
+        return optionalBoard.orElseThrow(
                 () -> new BusinessLogicException(ExceptionCode.BOARD_NOT_FOUND));
-        return findBoard;
     }
 }
