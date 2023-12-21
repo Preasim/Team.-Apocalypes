@@ -93,9 +93,7 @@ public class MemberService {
     // 회원 검색
     public Member findVerifiedMember(long memberId) {
         Optional<Member> optionalMember = memberRepository.findById(memberId);
-        Member member = optionalMember.orElseThrow(
-                () -> new BusinessLogicException(ExceptionCode.MEMBER_NOT_FOUND)
-        );
-        return member;
+        return optionalMember.orElseThrow(
+                () -> new BusinessLogicException(ExceptionCode.MEMBER_NOT_FOUND));
     }
 }
