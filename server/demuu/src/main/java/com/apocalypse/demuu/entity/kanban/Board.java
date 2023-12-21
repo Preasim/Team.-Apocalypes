@@ -8,6 +8,8 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -39,5 +41,20 @@ public class Board {
     @PreUpdate
     protected void onUpdate() {
         this.modifiedAt = new Timestamp(System.currentTimeMillis());
+    }
+
+    @OneToMany(mappedBy = "board", cascade = {CascadeType.ALL})
+    private List<Category> categories = new ArrayList<>();
+
+    public void addCategories(Category category) {
+        this.categories.add(category);
+        category.setBoard(this);
+    }
+
+    public void removeCategories(Category category) {
+        this.categories.remove(category);
+        if (category.getBoard() != this) {
+            category.setBoard(this);
+        }
     }
 }
