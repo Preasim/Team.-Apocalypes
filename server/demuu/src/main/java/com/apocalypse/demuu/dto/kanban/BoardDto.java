@@ -1,5 +1,6 @@
 package com.apocalypse.demuu.dto.kanban;
 
+import com.apocalypse.demuu.entity.Member;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,6 +22,7 @@ public class BoardDto {
     @Getter
     @Setter
     @AllArgsConstructor
+    @NoArgsConstructor
     public static class Patch {
         @NotBlank
         private String boardName;
@@ -35,5 +37,9 @@ public class BoardDto {
         private String boardName;
         private Timestamp createdAt;
         private Timestamp modifiedAt;
+
+        public void setMember(Member member) {
+            this.memberId = member.getMemberId();
+        }
     }
 }
