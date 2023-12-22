@@ -2,6 +2,7 @@ package com.apocalypse.demuu.dto.kanban;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.validation.constraints.NotBlank;
@@ -11,6 +12,7 @@ public class TaskDto {
     @Getter
     @Setter
     @AllArgsConstructor
+    @NoArgsConstructor
     public static class Post {
         @NotBlank
         private String taskName;
@@ -24,6 +26,7 @@ public class TaskDto {
     @Getter
     @Setter
     @AllArgsConstructor
+    @NoArgsConstructor
     public static class Patch {
         @NotBlank
         private String taskName;
