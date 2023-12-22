@@ -20,7 +20,7 @@ import java.util.Optional;
 @AllArgsConstructor
 public class CategoryService {
     private final CategoryRepository categoryRepository;
-    private BoardService boardService;
+    private final BoardService boardService;
 
     public Category createCategory(Category category) {
         long boardId = category.getBoard().getBoardId();
