@@ -1,5 +1,7 @@
 package com.apocalypse.demuu.dto.kanban;
 
+import com.apocalypse.demuu.entity.kanban.Category;
+import com.apocalypse.demuu.entity.kanban.Task;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,7 +21,7 @@ public class TaskDto {
         private String taskDescription;
         private String link;
         private String image;
-        private String taskStatus;
+//        private String taskStatus;
         private Timestamp taskDeadline;
     }
 
@@ -51,5 +53,9 @@ public class TaskDto {
         private Timestamp taskDeadline;
         private Timestamp createdAt;
         private Timestamp modifiedAt;
+
+        public void setCategory(Category category) {
+            this.categoryId = category.getCategoryId();
+        }
     }
 }
