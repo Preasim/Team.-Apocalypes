@@ -26,13 +26,27 @@ public class Task {
     private String taskDescription;
     private String link;
     private String image;
-    private String taskStatus;
+
+    @Enumerated(EnumType.STRING)
+    private TaskStatus taskStatus;
     private Timestamp taskDeadline;
 
     @Column(updatable = false)
     private Timestamp createdAt;
 
     private Timestamp modifiedAt;
+
+    public enum TaskStatus {
+        NO_STATUS("상태 없음"),
+        WAIT("대기"),
+        ACTIVE("진행 중"),
+        DONE("완료");
+
+        private String status;
+        TaskStatus(String status) {
+            this.status = status;
+        }
+    }
 
     @PrePersist
     protected void onCreate() {
