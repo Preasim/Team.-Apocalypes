@@ -2,8 +2,8 @@
 
 
 <div align="center">
- <img src="https://github.com/Preasim/myImg/assets/77485397/6922cd0a-f58a-4d2d-a553-8c261faf140e" style="width : 50%">
- <br>
+ <img src="https://github.com/Preasim/myImg/assets/77485397/6922cd0a-f58a-4d2d-a553-8c261faf140e" style="width : 70%">
+ <div style="padding-top : 40px"></div>
 <b>일정, 루틴 관리 플랫폼</b><br>
  프로젝트 기간: 2023.11.11 ~ 2023.12.11
 </div>
