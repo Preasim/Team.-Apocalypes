@@ -19,23 +19,10 @@
 
 <br>
 
-<details>
-<summary>담당 파트</summary>
-<div markdown="1">
- 
- **김인환**
-
- 
- **김창규**
-
-
-</div>
-</details>
-
-<br>
-
 ## 📂 Stacks
-
+<div align="center">
+ <img src="https://github.com/Preasim/myImg/assets/77485397/03b8966b-dbd6-4656-b17d-ffaa0b1db13a" style="width : 70%">\
+</div>
 
 <br>
 
