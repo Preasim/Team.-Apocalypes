@@ -12,7 +12,7 @@
 </div>
 
 ## 👨‍👨‍👧‍👧 Team List
-|![김인환](https://github.com/Preasim/myImg/assets/77485397/9f2cab9e-b886-4b23-bb7b-8f3acf9fd74d)|![김창규](https://github.com/Preasim/myImg/assets/77485397/9f2cab9e-b886-4b23-bb7b-8f3acf9fd74d)|
+|![김인환](https://github.com/Preasim/myImg/assets/77485397/2c2981c1-1d32-4c5b-bb59-2d39eb966b48)|![김창규](https://github.com/Preasim/myImg/assets/77485397/2c2981c1-1d32-4c5b-bb59-2d39eb966b48)|
 |:---:|:---:|
 |[김인환](https://github.com/Preasim)|[김창규](https://github.com/CordJG)|
 |BE|FE|
