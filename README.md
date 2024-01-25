@@ -14,7 +14,7 @@
 ## 👨‍👨‍👧‍👧 Team List
 |![김인환](https://github.com/Preasim/myImg/assets/77485397/2c2981c1-1d32-4c5b-bb59-2d39eb966b48)|![김창규](https://github.com/Preasim/myImg/assets/77485397/2c2981c1-1d32-4c5b-bb59-2d39eb966b48)|
 |:---:|:---:|
-|[김인환](https://github.com/Preasim)|[김창규](https://github.com/CordJG)|
+|[김인환](https://github.com/Preasim)|[김창규](https://github.com/fefdfea)|
 |BE|FE|
 
 <br>
@@ -28,8 +28,8 @@
 
 ## 📸 Service info
 <div align="center">
- <img src="https://github.com/Preasim/myImg/assets/77485397/91395e19-1096-42e7-8b17-dad28131b89c" style="width : 90%">
- <img src="https://github.com/Preasim/myImg/assets/77485397/bc2575e8-474f-46f4-b841-1d13a5f25dd8" style="width : 90%">
- <img src="https://github.com/Preasim/myImg/assets/77485397/08e8cc9c-0824-41b5-b67c-ebc73019c5b8" style="width : 90%">
- <img src="https://github.com/Preasim/myImg/assets/77485397/e78c59d8-0089-451c-85c5-f114116b4fc2" style="width : 90%">
+ <img src="https://github.com/Preasim/myImg/assets/77485397/91395e19-1096-42e7-8b17-dad28131b89c" style="width : 70%">
+ <img src="https://github.com/Preasim/myImg/assets/77485397/bc2575e8-474f-46f4-b841-1d13a5f25dd8" style="width : 70%">
+ <img src="https://github.com/Preasim/myImg/assets/77485397/08e8cc9c-0824-41b5-b67c-ebc73019c5b8" style="width : 70%">
+ <img src="https://github.com/Preasim/myImg/assets/77485397/e78c59d8-0089-451c-85c5-f114116b4fc2" style="width : 70%">
 </div>
