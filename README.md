@@ -21,9 +21,15 @@
 
 ## 📂 Stacks
 <div align="center">
- <img src="https://github.com/Preasim/myImg/assets/77485397/03b8966b-dbd6-4656-b17d-ffaa0b1db13a" style="width : 70%">\
+ <img src="https://github.com/Preasim/myImg/assets/77485397/03b8966b-dbd6-4656-b17d-ffaa0b1db13a" style="width : 90%">
 </div>
 
 <br>
 
 ## 📸 Service info
+<div align="center">
+ <img src="https://github.com/Preasim/myImg/assets/77485397/91395e19-1096-42e7-8b17-dad28131b89c" style="width : 90%">
+ <img src="https://github.com/Preasim/myImg/assets/77485397/bc2575e8-474f-46f4-b841-1d13a5f25dd8" style="width : 90%">
+ <img src="https://github.com/Preasim/myImg/assets/77485397/08e8cc9c-0824-41b5-b67c-ebc73019c5b8" style="width : 90%">
+ <img src="https://github.com/Preasim/myImg/assets/77485397/e78c59d8-0089-451c-85c5-f114116b4fc2" style="width : 90%">
+</div>
