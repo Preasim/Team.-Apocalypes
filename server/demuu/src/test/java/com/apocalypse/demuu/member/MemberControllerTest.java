@@ -118,7 +118,7 @@ public class MemberControllerTest {
                 time
         );
 
-        given(memberService.findMember(Mockito.anyLong())).willReturn(new Member());
+        given(memberService.findVerifiedMember(Mockito.anyLong())).willReturn(new Member());
         given(mapper.memberToResponse(Mockito.any(Member.class))).willReturn(response);
 
         ResultActions actions = mockMvc.perform(
@@ -365,7 +365,6 @@ public class MemberControllerTest {
                         )
                 ));
     }
-
 
     public static List<MemberDto.ResponseDto> getMultiResponseBody() {
         Timestamp time = Timestamp.valueOf("2023-12-13 10:30:00");
