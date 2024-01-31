@@ -22,10 +22,12 @@ public class TaskService {
     private final TaskRepository taskRepository;
     private final CategoryService categoryService;
 
-    public Task createTask(Task task) {
+    public Task createTask(Task task, String status) {
         long categoryId = task.getCategory().getCategoryId();
         Category category = categoryService.findVerifiedCategory(categoryId);
         category.addTasks(task);
+
+        setTaskStatus(task, status);
         return taskRepository.save(task);
     }
 
@@ -42,18 +44,20 @@ public class TaskService {
     }
 
     @Transactional
-    public Task updateTask(long categoryId, long taskId, TaskDto.Patch task) {
+    public Task updateTask(long categoryId, long taskId, String status, TaskDto.Patch task) {
         Task findTask = findVerifiedTask(taskId);
         Category findCategory = categoryService.findVerifiedCategory(categoryId);
 
         if (!findTask.getCategory().getCategoryId().equals(findCategory.getCategoryId())) {
             throw new BusinessLogicException(ExceptionCode.NO_PERMISSION_EDITING_POST);
         } else {
-            if (task.getTaskName() != null) {
-                findTask.setTaskName(task.getTaskName());
-            }
+            if (task.getTaskName() != null) findTask.setTaskName(task.getTaskName());
+            if (task.getTaskDescription() != null) findTask.setTaskDescription(task.getTaskDescription());
+            if (task.getLink() != null) findTask.setLink(task.getLink());
+            if (task.getImage() != null) findTask.setImage(task.getImage());
+            if (task.getTaskDescription() != null) findTask.setTaskDeadline(task.getTaskDeadline());
+            if (status != null) setTaskStatus(findTask, status);
         }
-
         return findTask;
     }
 
@@ -62,6 +66,26 @@ public class TaskService {
         Category category = categoryService.findVerifiedCategory(categoryId);
         category.removeTasks(task);
         taskRepository.delete(task);
+    }
+
+    private void setTaskStatus(Task task, String status) {
+        switch (status.toLowerCase()) {
+            case "nostatus" :
+                task.setTaskStatus(Task.TaskStatus.NO_STATUS);
+                break;
+            case "wait" :
+                task.setTaskStatus(Task.TaskStatus.WAIT);
+                break;
+            case "active" :
+                task.setTaskStatus(Task.TaskStatus.ACTIVE);
+                break;
+            case "done" :
+                task.setTaskStatus(Task.TaskStatus.DONE);
+                break;
+            default:
+                task.setTaskStatus(Task.TaskStatus.NO_STATUS);
+                break;
+        }
     }
 
     public Task findVerifiedTask(long taskId) {
