@@ -4,6 +4,7 @@ import com.apocalypse.demuu.dto.kanban.TaskDto;
 import com.apocalypse.demuu.entity.kanban.Task;
 import com.apocalypse.demuu.mapper.kanban.TaskMapper;
 import com.apocalypse.demuu.response.MultiResponseDto;
+import com.apocalypse.demuu.response.SingleResponseDto;
 import com.apocalypse.demuu.service.kanban.CategoryService;
 import com.apocalypse.demuu.service.kanban.TaskService;
 import com.apocalypse.demuu.utils.UriCreator;
@@ -35,40 +36,13 @@ public class TaskController {
         Task task = taskMapper.postToTask(requestBody);
         task.setCategory(categoryService.findVerifiedCategory(categoryId));
 
-        if (!isValidStatus(status)) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Invalid Status");
-        }
+        if (!isValidStatus(status)) return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Invalid Status");
 
-        setTaskStatus(task, status);
-        Task createTask = taskService.createTask(task);
+        Task createTask = taskService.createTask(task, status);
 
         URI location = UriCreator.createUri(
                 "/kanban/"+categoryId+"/task/"+status, createTask.getTaskId());
         return ResponseEntity.created(location).build();
-    }
-
-    private boolean isValidStatus(String status) {
-        return Arrays.asList("nostatus","wait","active","done").contains(status.toLowerCase());
-    }
-
-    private void setTaskStatus(Task task, String status) {
-        switch (status.toLowerCase()) {
-            case "nostatus" :
-                task.setTaskStatus(Task.TaskStatus.NO_STATUS);
-                break;
-            case "wait" :
-                task.setTaskStatus(Task.TaskStatus.WAIT);
-                break;
-            case "active" :
-                task.setTaskStatus(Task.TaskStatus.ACTIVE);
-                break;
-            case "done" :
-                task.setTaskStatus(Task.TaskStatus.DONE);
-                break;
-            default:
-                task.setTaskStatus(Task.TaskStatus.NO_STATUS);
-                break;
-        }
     }
 
     @GetMapping
@@ -80,5 +54,32 @@ public class TaskController {
         List<TaskDto.Response> responses = taskMapper.tasksToResponses(taskPage.getContent());
 
         return new ResponseEntity<>(new MultiResponseDto<>(responses, taskPage), HttpStatus.OK);
+    }
+
+    @PatchMapping("/{task-id}/{status}")
+    public ResponseEntity patchTask(@PathVariable("category-id") @Positive long categoryId,
+                                     @PathVariable("task-id") @Positive long taskId,
+                                     @PathVariable("status") String status,
+                                     @Valid @RequestBody TaskDto.Patch requestBody) {
+        Task task = taskMapper.patchToTask(requestBody);
+        task.setTaskId(taskId);
+
+        if (!isValidStatus(status)) return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Invalid Status");
+
+        Task updatedTask = taskService.updateTask(categoryId, taskId, status, requestBody);
+        TaskDto.Response response = taskMapper.taskToResponse(updatedTask);
+
+        return new ResponseEntity<>(new SingleResponseDto<>(response), HttpStatus.OK);
+    }
+
+    @DeleteMapping("/{task-id}")
+    public ResponseEntity deleteTask(@PathVariable("category-id") @Positive long categoryId,
+                                     @PathVariable("task-id") @Positive long taskId) {
+        taskService.deleteTask(categoryId, taskId);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    private boolean isValidStatus(String status) {
+        return Arrays.asList("nostatus","wait","active","done").contains(status.toLowerCase());
     }
 }
