@@ -29,7 +29,7 @@ public class Task {
 
     @Enumerated(EnumType.STRING)
     private TaskStatus taskStatus;
-    private Timestamp taskDeadline;
+    private String taskDeadline;
 
     @Column(updatable = false)
     private Timestamp createdAt;
