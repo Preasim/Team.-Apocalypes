@@ -9,7 +9,8 @@ public enum ExceptionCode {
     NO_PERMISSION_EDITING_POST(403,"작성자만 수정할 수 있습니다"),
     BOARD_NOT_FOUND(404, "칸반보드를 찾을 수 없습니다."),
     CATEGORY_NOT_FOUND(404, "카테고리를 찾을 수 없습니다."),
-    TASK_NOT_FOUND(404, "작업을 찾을 수 없습니다.");
+    TASK_NOT_FOUND(404, "작업을 찾을 수 없습니다."),
+    UNABLE_TO_SEND_EMAIL(500, "이메일 발신 에러");
 
     @Getter
     private int status;
