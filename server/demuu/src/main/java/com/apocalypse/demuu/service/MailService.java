@@ -11,6 +11,7 @@
 //@Service
 //@RequiredArgsConstructor
 //public class MailService {
+//
 //    @Autowired
 //    private final JavaMailSender javaMailSender;
 //    private static final String senderEmail = "preasin.kr@gmail.com";
