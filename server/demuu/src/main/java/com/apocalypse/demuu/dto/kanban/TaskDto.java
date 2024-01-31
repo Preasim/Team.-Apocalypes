@@ -21,8 +21,7 @@ public class TaskDto {
         private String taskDescription;
         private String link;
         private String image;
-//        private String taskStatus;
-        private Timestamp taskDeadline;
+        private String taskDeadline;
     }
 
     @Getter
@@ -35,8 +34,7 @@ public class TaskDto {
         private String taskDescription;
         private String link;
         private String image;
-        private String taskStatus;
-        private Timestamp taskDeadline;
+        private String taskDeadline;
     }
 
     @Getter
@@ -50,7 +48,7 @@ public class TaskDto {
         private String link;
         private String image;
         private String taskStatus;
-        private Timestamp taskDeadline;
+        private String taskDeadline;
         private Timestamp createdAt;
         private Timestamp modifiedAt;
 
