@@ -5,8 +5,9 @@
 @import url("./NonLogin/page.css");
 @import url("./NonLogin/component/Section1/Section1SecondScene/Section1.css");
 @import url("./NonLogin/component/Section2/Section2.css");
-@import url("./Kanbanbodeu/kanbanbodeu.css");
+@import url("./CanbanBoard/CanbanBoard.css");
 @import url("/calendar/calendar.css");
 @import url("../component/LoginHeader/Header.css");
 @import url("/globalCss/breakPoint.css");
+@import url("./Calendar/component/CalendarDay/CalendarModal.css");
 /* css 초기화 및 펄스널 컬러 , 주로 사용하는 클래스 지정 */

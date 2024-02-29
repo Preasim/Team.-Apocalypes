@@ -1,0 +1,141 @@
+.container {
+  width: 30rem;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1.8rem 1.2rem;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  color: black;
+  cursor: auto;
+}
+
+.ExitButton {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.topFlexBox {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.colorSelectCircle {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  background-color: yellow;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.colorPicker {
+  display: none;
+}
+
+.timeStyle {
+  display: flex;
+  align-items: center;
+}
+
+.timeStyle > div:nth-of-type(1) {
+  margin-right: 0.5rem;
+  font-size: 14px;
+}
+
+.timeStyle > span {
+  margin-right: 0.5rem;
+}
+
+.colorUl {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.selectContainer {
+  width: 15rem;
+  position: absolute;
+  top: 100%;
+  background-color: #fff;
+  border: 1px solid black;
+  font-size: 14px;
+  margin-left: calc(1rem + 30px);
+}
+
+.timeSelect option {
+  padding: 3px 0;
+}
+
+.displayNone {
+  display: none;
+}
+
+.active {
+  display: flex;
+}
+
+.titleInput {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid black;
+}
+
+.leftMarginBox {
+  margin-left: calc(1rem + 30px);
+}
+
+.selectBox {
+  font-size: 14px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.selectBox > select {
+  font-size: inherit;
+  border: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.selectBox > select:nth-of-type(1) {
+  margin-right: 0.5rem;
+}
+
+.selectBox > span {
+  margin-right: 0.5rem;
+}
+
+.bottomInputContainer > div > input {
+  border: 0;
+  padding: 0.3rem;
+}
+
+.bottomInputContainer > div:nth-of-type(1) {
+  margin-top: 1rem;
+}
+
+.bottomInputContainer > div:nth-of-type(2) {
+  margin-top: 1rem;
+}
+
+.timeSelect {
+  position: relative;
+}
+
+.timeSelect::before {
+  content: "sdfsddsf";
+  width: 1rem;
+  height: 10px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  background-color: black;
+}

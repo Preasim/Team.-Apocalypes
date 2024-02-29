@@ -1,0 +1,64 @@
+.DetailUseProfileStyle {
+  width: 20rem;
+  background-color: var(--white);
+  padding: 2.2rem 1.5rem 0.8rem 1.5rem;
+  box-sizing: border-box;
+  box-shadow: 0 0 10px var(--grey);
+  z-index: 10;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.DetailUserPosiion {
+  top: 100%;
+  left: -17.5rem;
+}
+
+.imgBox {
+  width: 4rem;
+}
+
+.accountBox {
+  line-height: 1.5;
+}
+
+.accountBox p:nth-of-type(1) {
+  font-size: 1.6rem;
+}
+
+.accountBox p:nth-of-type(2) {
+  font-size: 0.9rem;
+}
+
+.accountBox p:nth-of-type(3) {
+  font-size: 0.9rem;
+}
+
+.accountSettingBox {
+  border-radius: 20px;
+  border: 1px solid var(--purple06);
+}
+
+.accountSettingBox a {
+  display: block;
+  padding: 0.5rem 1rem;
+}
+
+.contractBox {
+  line-height: 1.6;
+}
+
+.contractBox p:nth-of-type(1) {
+  font-size: 0.8rem;
+}
+
+.contractBox p:nth-of-type(2) {
+  font-size: 0.7rem;
+}
+
+.contractBox button {
+  display: block;
+  color: var(--red08);
+  margin-top: 0.9rem;
+  font-size: 1.2rem;
+}

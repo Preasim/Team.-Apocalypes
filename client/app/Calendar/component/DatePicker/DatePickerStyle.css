@@ -1,0 +1,32 @@
+.react-datepicker {
+  left: 0;
+}
+
+.react-datepicker-popper[data-placement^="bottom"] {
+  padding: 0;
+}
+
+.react-datepicker {
+  border: 0;
+}
+
+.react-datepicker-wrapper {
+  height: 0;
+}
+
+.react-datepicker__header {
+  border-bottom: 0;
+  background-color: transparent;
+}
+
+.react-datepicker__tab-loop {
+  width: 100%;
+}
+
+.react-datepicker-popper {
+  width: 100%;
+}
+
+.checkBoxContainer.show {
+  display: block;
+}

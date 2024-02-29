@@ -1,0 +1,73 @@
+.setCalendarStyle {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.setCalendarStyle::-webkit-scrollbar {
+  width: 10px;
+}
+.setCalendarStyle::-webkit-scrollbar-thumb {
+  background-color: #2f3542;
+  border-radius: 10px;
+}
+
+.timeStyle {
+  height: 44px;
+  display: flex;
+  justify-content: center;
+}
+
+.timeStyle:after {
+  width: 100%;
+  height: 1px;
+  border: 1px solid #e0e0e0;
+}
+
+.overflowScroll {
+  height: calc(100% - 7rem);
+  overflow-y: scroll;
+}
+
+.schedule {
+  width: 95%;
+  height: 100%;
+  border-top: 1px solid #e0e0e0;
+}
+
+.timeWidth {
+  width: 5%;
+}
+
+.timeSize {
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.scheduleLine {
+  position: relative;
+  width: 100%;
+  height: 44px;
+}
+
+.scheduleLine::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 100%;
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.scheduleDom {
+  width: 90%;
+  border-radius: 5px;
+  background-color: blue;
+  padding: 0.7rem 0.6rem;
+  color: var(--white);
+  line-height: 1.6;
+}
+
+.scheduleDom p {
+  font-family: inherit;
+}

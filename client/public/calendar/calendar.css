@@ -37,3 +37,11 @@ body .react-datepicker__day-names .react-datepicker__day-name {
 body .react-datepicker__week .react-datepicker__day {
   margin: 0;
 }
+
+.removeTriangle .react-datepicker__triangle {
+  display: none;
+}
+
+.dateContainer .removeTriangle.active {
+  display: block;
+}

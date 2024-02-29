@@ -13,12 +13,20 @@
   justify-content: space-around;
 }
 
+.justifyEnd {
+  justify-content: flex-end;
+}
+
 .flexCol {
   flex-direction: column;
 }
 
 .alignCenter {
   align-items: center;
+}
+
+.alignEnd {
+  align-items: flex-end;
 }
 
 .mx1 {
@@ -202,4 +210,8 @@
 
 .BoxSizingborderBox {
   box-sizing: border-box;
+}
+
+.pointerNone {
+  pointer-events: none;
 }

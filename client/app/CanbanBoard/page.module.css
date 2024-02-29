@@ -1,0 +1,16 @@
+.sectionHeightSize {
+  min-height: calc(100vh - 5rem);
+}
+
+.workCardContainer {
+  width: 85%;
+  height: 47.9rem;
+}
+
+.workSectionBackground {
+  background-color: var(--purple02);
+}
+
+.dragging {
+  opacity: 0.5;
+}

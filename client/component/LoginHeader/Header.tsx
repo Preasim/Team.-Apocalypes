@@ -9,7 +9,7 @@ import SlideMenu from "./component/SliderMenu/SlideMenu";
 import DetailUserProfile from "./component/DetailUseProfile/DetailUserProfile";
 export default function LoginHeader() {
   return (
-    <header className={`${style.LoginHeader} widthFull`}>
+    <header className={`${style.LoginHeader} widthFull LoginHeader`}>
       <ul className={`flex justifyBetween alignCenter mx3 heightFull`}>
         <li className="heightFull">
           <div className="flex justifyCenter alignCenter heightFull ">
